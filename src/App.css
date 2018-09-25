@@ -4,15 +4,14 @@
 
 .flex-container {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
 }
 
-/* NOT USED...
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  display: inline;
+  border-radius: 15px;
 }
-*/
+
 
 a {
   color: lightgreen;
@@ -26,9 +25,11 @@ a:hover, a:focus {
 
 .App-header {
   background-color: #222;
-  height: 120px;
+  height: 220px;
   padding: 20px;
   color: white;
+  display: inline;
+  position: relative;
 }
 
 .App-title {
@@ -58,7 +59,7 @@ a:hover, a:focus {
   font-family: sans-serif;
   color: white;
   font-size: 0.65em;
-  margin: 40px 60px 40px 60px;
+  margin: 40px 60px 40px 100px;
   width: 50%;
 }
 
@@ -67,7 +68,7 @@ a:hover, a:focus {
   font-family: sans-serif;
   color: white;
   font-size: 0.65em;
-  margin: 40px 60px 40px 60px;
+  margin: 40px 20px 40px 60px;
   width: 50%;
 }
 

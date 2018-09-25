@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
+import logo from './Stars_small.jpg';
 import './App.css';
 //import ErrorBoundaryComponent from './ErrorBoundaryComponent'
 
@@ -10,6 +10,7 @@ class App extends Component {
     return (
       <div className="App flex-container">
         <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Agency Ratings</h1>
           <h2 className="App-subtitle">where interpreters rate agencies they like, and the ones they don't</h2>
         </header>
@@ -45,6 +46,7 @@ class App extends Component {
 
       <footer id="footer">
           <p className="Footer-text">Built by <a href="https://www.linkedin.com/in/jennifersmithuk">Jennifer Smith</a></p>
+          <p>Vector Art by <a rel="nofollow" target="_blank" href="https://www.vecteezy.com">Vecteezy.com</a></p>
       </footer>
     </div>
 

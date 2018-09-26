@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import logo from './Stars_small.jpg';
 import './App.css';
-//import ErrorBoundaryComponent from './ErrorBoundaryComponent'
+import ErrorBoundary from './ErrorBoundary'
 
 
 
 class App extends Component {
+
+
+
+
   render() {
     return (
+
+      <ErrorBoundary>
+
       <div className="App flex-container">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -49,6 +56,8 @@ class App extends Component {
           <p>Vector Art by <a rel="nofollow" target="_blank" href="https://www.vecteezy.com">Vecteezy.com</a></p>
       </footer>
     </div>
+
+    </ErrorBoundary>
 
       );
   }

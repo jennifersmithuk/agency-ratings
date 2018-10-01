@@ -12,7 +12,6 @@
   border-radius: 15px;
 }
 
-
 a {
   color: lightgreen;
   text-decoration: none;
@@ -46,12 +45,17 @@ a:hover, a:focus {
   font-family: sans-serif;
   color: white;
   font-size: 0.75em;
+  margin-bottom: 20px;
 }
 
 .Ratings {
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-flow: row nowrap;
-
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
 }
 
 .Ratings-results {
@@ -59,8 +63,10 @@ a:hover, a:focus {
   font-family: sans-serif;
   color: white;
   font-size: 0.65em;
-  margin: 40px 60px 40px 100px;
-  width: 50%;
+  margin: auto;
+  align-self: center;
+  max-width: calc(50% - 50px);
+
 }
 
 .Ratings-form {
@@ -68,8 +74,9 @@ a:hover, a:focus {
   font-family: sans-serif;
   color: white;
   font-size: 0.65em;
-  margin: 40px 20px 40px 60px;
-  width: 50%;
+  margin: auto;
+  align-self: center;
+  max-width: calc(50% - 50px);
 }
 
 h3 {

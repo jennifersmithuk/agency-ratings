@@ -68,6 +68,10 @@ a:hover, a:focus {
   max-width: calc(50% - 50px);
 }
 
+.icon {
+  background-color: black;
+  background:transparent;
+}
 
 .Ratings-form {
   text-align: justify;

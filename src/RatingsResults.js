@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import Rating from 'react-rating';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import starGrey from './star-grey.png';
-import starYellow from './star-yellow.png';
-
+import starGrey from './star_grey_24.png';
+import starYellow from './star_yellow_24.png';
 
 
 
 class RatingsResults extends Component {
-
 
 
 

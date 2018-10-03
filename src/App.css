@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -7,9 +12,17 @@
   flex-flow: column wrap;
 }
 
+/*
+.flexItem {
+    flex: 1;
+}
+*/
+
 .App-logo {
   display: inline;
   border-radius: 15px;
+  align-self: flex-start;
+  margin: 10px 0 0 10px;
 }
 
 a {
@@ -24,74 +37,105 @@ a:hover, a:focus {
 
 .App-header {
   background-color: #222;
-  height: 220px;
+  height: 125px;
   padding: 20px;
   color: white;
-  display: inline;
   position: relative;
+  text-align: left;
+  align-self: flex-start;
 }
 
 .App-title {
-  font-size: 1.5em;
+  text-align: left;
+  display: inline;
 }
 
-.App-subtitle {
+h1 {
+  font-size: 1.5em;
+  margin: 20px 0 0 55px;
+}
+
+h2 {
   font-size: 1em;
   color: lightgreen;
+  margin: 10px 0 0 55px;
 }
 
 .App-intro {
   text-align: center;
-  font-family: sans-serif;
   color: white;
-  font-size: 0.75em;
-  margin-bottom: 20px;
+  font-size: 0.90em;
+  margin: 10px 0 30px 0;
+}
+
+main {
+  height: 100%;
 }
 
 .Ratings {
-  padding: 0;
-  margin: 0;
-  display: flex;
+  margin: 0 0 0 20px;
   flex-flow: row nowrap;
-  align-items: stretch;
-  justify-content: center;
-  width: 100%;
+  height: 1250px;
 }
 
 .Ratings-results {
-  text-align: justify;
-  font-family: sans-serif;
+  order: 1;
+  text-align: left;
   color: white;
-  font-size: 0.70em;
-  margin: auto;
-  align-self: center;
-  max-width: calc(50% - 50px);
-}
-
-.icon {
-  background-color: black;
-  background:transparent;
-}
-
-.Ratings-form {
-  text-align: justify;
-  font-family: sans-serif;
-  color: white;
-  font-size: 0.70em;
-  margin: auto;
-  align-self: center;
-  max-width: calc(50% - 50px);
+  /*margin: auto;*/
+  margin: 0 10px 0 0;
+  max-width: calc(30% - 50px);
+  width: 30%;
+  overflow-y: auto;
 }
 
 h3 {
+  font-size: 1em;
   color: lightgreen;
+  padding: 0 0 20px 0;
+}
+
+.Search-box {
+  padding-top: 7px;
+  margin: 0 0 15px 5px;
+}
+
+.Ratings-agencies-list {
+  list-style-type: none;
+  padding-bottom: 10px;
+  margin-left: 5px;
+  font-size: 0.85em;
+}
+
+.Ratings-agencies-list li:hover {
+  color: lightgreen;
+}
+
+.Ratings-list-names {
+  padding-bottom: 1px;
+}
+
+.Ratings-list-stars {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.Ratings-form {
+  order: 2;
+  color: white;
+  /*margin: auto;*/
+  max-width: calc(70% - 50px);
+  width: 70%;
+  align-self: baseline;
+  text-align: left;
+  /*display: inline-block;*/
 }
 
 #footer {
   display: block;
   position: relative;
   bottom: 0;
-  height: 65px;
+  height: 55px;
   width: 100%;
   color: white;
   background: #222;
@@ -104,7 +148,8 @@ h3 {
 }
 
 .Footer-text {
-  padding-top: 15px;
+  padding: 5px 5px 5px 5px;;
+  color: white;
 }
 
 
@@ -118,6 +163,6 @@ h3 {
   to { transform: rotate(360deg); }
 }
 
-
+@media queries...
 
 */

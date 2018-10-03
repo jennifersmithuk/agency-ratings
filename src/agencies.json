@@ -1,6 +1,4 @@
-{
-  "agencies": [
-  {
+[{
     "AgencyName": "505 Interpreting Ltd",
     "AgencyLocationTown": "Woburn",
     "AgencyLocationRegion": "Bedfordshire",
@@ -820,4 +818,3 @@
     "RatingRecommend": null
   }
 ]
-}

@@ -78,9 +78,9 @@ class RatingsResults extends Component {
                   {agencies.AgencyName}
                   <Rating
                     className="Ratings-list-stars"
-                    emptySymbol={<img src={starGrey} className="icon" />}
-                    placeholderSymbol={<img src={starGrey} className="icon" />}
-                    fullSymbol={<img src={starYellow} className="icon" />}
+                    emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
+                    placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
+                    fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
                   />
                 </li>
              ))

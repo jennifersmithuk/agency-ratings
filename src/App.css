@@ -62,10 +62,12 @@ h2 {
 }
 
 .App-intro {
-  text-align: center;
+  text-align: left;
   color: white;
   font-size: 0.90em;
-  margin: 10px 0 30px 0;
+  margin: 10px 0 30px 20px;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid lightgreen;
 }
 
 main {
@@ -75,7 +77,8 @@ main {
 .Ratings {
   margin: 0 0 0 20px;
   flex-flow: row nowrap;
-  height: 1250px;
+  height: 1000px;
+  border-bottom: 1px solid lightgreen;
 }
 
 .Ratings-results {

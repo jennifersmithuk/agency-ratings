@@ -54,7 +54,7 @@ class App extends Component {
 
       <div className="App flex-container">
         <header className="App-header flex-container">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="App-logo" alt="Logo of 6 Green Stars of different ratings" />
           <h1 className="App-title">Welcome to Agency Ratings</h1>
           <h2 >where interpreters rate agencies they like, and the ones they don't</h2>
         </header>
@@ -63,7 +63,7 @@ class App extends Component {
         <div className="App-intro">
           <p>Most interpreters are freelance, working for a variety of agencies and direct clients.</p>
           <p>There are a multitude of agencies. Relying on word of mouth isn't enough.</p>
-          <p>Transparency, reputation, clarity: help us to help you. Rate them now.</p>
+          <p>Transparency and clarity: Rate them now.</p>
         </div>
 
         <section className="Ratings flex-container">

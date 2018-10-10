@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import AddButton from './AddButton';
+
 
 class RatingsForm extends Component {
-
-
 
 
   render() {
@@ -18,11 +18,17 @@ class RatingsForm extends Component {
         <p>reprehenderit in voluptate velit esse cillum dolore eu fugiat</p>
         <p>nulla pariatur. Excepteur sint occaecat cupidatat non proident,</p>
         <p>sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
+
+      <AddButton></AddButton>
+
+
+
+          </div>
 
 
     );
 }
 }
+
 
 export default RatingsForm;

@@ -6,6 +6,7 @@ import RatingsResults from './RatingsResults';
 import RatingsForm from './RatingsForm';
 import agencies from './agencies.json';
 import escapeRegExp from 'escape-string-regexp';
+import SignInButton from './SignInButton';
 
 /*
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -54,9 +55,10 @@ class App extends Component {
 
       <div className="App flex-container">
         <header className="App-header flex-container">
-          <img src={logo} className="App-logo" alt="Logo of 6 Green Stars of different ratings" />
+          <img src={logo} className="App-logo" alt="Logo of 6 Green Stars with different ratings" />
           <h1 className="App-title">Welcome to Agency Ratings</h1>
           <h2 >where interpreters rate agencies they like, and the ones they don't</h2>
+          <SignInButton></SignInButton>
         </header>
       <main>
 

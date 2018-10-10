@@ -61,6 +61,13 @@ h2 {
   margin: 10px 0 0 55px;
 }
 
+.Sign-in-button {
+  color: lightgreen;
+  border: 1px solid;
+  border-radius: 10px;
+  float: right;
+}
+
 .App-intro {
   text-align: left;
   color: white;

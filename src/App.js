@@ -7,6 +7,8 @@ import RatingsForm from './RatingsForm';
 import agencies from './agencies.json';
 import escapeRegExp from 'escape-string-regexp';
 import SignInButton from './SignInButton';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import theme from './theme';
 
 /*
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -52,6 +54,7 @@ class App extends Component {
     return (
 
       <ErrorBoundary>
+        <MuiThemeProvider theme={theme}>
 
       <div className="App flex-container">
         <header className="App-header flex-container">
@@ -86,7 +89,7 @@ class App extends Component {
           &nbsp;&nbsp;&nbsp;&nbsp;Vector Art by <a rel="nofollow" target="_blank" href="https://www.vecteezy.com">Vecteezy.com</a></span>
       </footer>
     </div>
-
+    </MuiThemeProvider>
     </ErrorBoundary>
 
       );

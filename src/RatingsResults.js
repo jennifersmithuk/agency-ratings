@@ -4,7 +4,7 @@ import escapeRegExp from 'escape-string-regexp';
 import sortBy from 'sort-by';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import starGrey from './star_grey_16.png';
-import starYellow from './star_yellow_16.png';
+import starYellow from './star_green_16.png';
 
 
 
@@ -47,7 +47,7 @@ class RatingsResults extends Component {
 
     return (
 
-      <section className="Ratings-results" tabIndex={0}>
+      <section className="Ratings-results">
         <h3>The best and the worst...</h3>
 
         <input

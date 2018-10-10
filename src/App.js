@@ -60,15 +60,22 @@ class App extends Component {
         <header className="App-header flex-container">
           <img src={logo} className="App-logo" alt="Logo of 6 Green Stars with different ratings" />
           <h1 className="App-title">Welcome to Agency Ratings</h1>
-          <h2 >where interpreters rate agencies they like, and the ones they don't</h2>
-          <SignInButton></SignInButton>
+          <h2>where interpreters rate agencies they like, and the ones they don't</h2>
+          <SignInButton
+            tabIndex={0}
+            ></SignInButton>
         </header>
       <main>
 
-        <div className="App-intro">
+        <div className="App-about">
+          <h3 className="App-about-heading">About Agency Ratings</h3>
+          <div className="App-about-info">
           <p>Most interpreters are freelance, working for a variety of agencies and direct clients.</p>
+          <br />
           <p>There are a multitude of agencies. Relying on word of mouth isn't enough.</p>
-          <p>Transparency and clarity: Rate them now.</p>
+          <br />
+          <p>Transparency and clarity for all. Finally, a way to rate agencies in a safe way.</p>
+        </div>
         </div>
 
         <section className="Ratings flex-container">
@@ -79,7 +86,9 @@ class App extends Component {
             updateFilterResults={this.updateFilterResults.bind(this)}
             />
 
-          <RatingsForm />
+          <RatingsForm
+            agencies={this.state.agencies}
+            />
 
       </section>
       </main>

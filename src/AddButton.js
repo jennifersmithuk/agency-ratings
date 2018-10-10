@@ -11,7 +11,7 @@ const styles = theme => ({
   },
 });
 
-const primary = lime['A400']; // #F44336
+const primary = lime['A400']; // #8bc34a
 
 
 function AddButton(props) {

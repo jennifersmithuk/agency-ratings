@@ -38,7 +38,8 @@ a:hover, a:focus {
 .App-header {
   background-color: #222;
   height: 125px;
-  padding: 20px;
+  width: 100%;
+  padding: 15px;
   color: white;
   position: relative;
   text-align: left;
@@ -52,19 +53,19 @@ a:hover, a:focus {
 
 h1 {
   font-size: 1.5em;
-  margin: 20px 0 0 55px;
+  margin: 15px 0 0 0;
 }
 
 h2 {
   font-size: 1em;
-  color: ;
-  margin: 10px 0 0 55px;
+  color: #8bc34a;
+  margin: 10px 0 0 0;
 }
 
 .Sign-in-button {
   border: 1px solid;
   border-radius: 10px;
-  float: right;
+  float: left;
 }
 
 .App-intro {
@@ -129,6 +130,11 @@ h3 {
   padding-top: 5px;
 }
 
+.Ratings-list-stars-form {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
 .Ratings-form {
   order: 2;
   color: white;
@@ -138,6 +144,21 @@ h3 {
   align-self: baseline;
   text-align: left;
   /*display: inline-block;*/
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.Form {
+  padding: 0 0 0 10px;
+}
+
+.Form-main {
+  padding: 10px 0 10px 0;
+}
+
+.Submit-button {
+  padding: 0 0 0 10px;
+
 }
 
 #footer {

@@ -6,6 +6,8 @@ import starGrey from './star_grey_16.png';
 import starYellow from './star_green_16.png';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import AddAgency from './AddAgency'
+import { Route } from 'react-router-dom'
 
 
 class RatingsForm extends Component {
@@ -83,7 +85,6 @@ handleClose = () => {
               variant="contained"
               size="medium"
               color="primary"
-
             >
               Select Agency
             </Button>
@@ -110,12 +111,26 @@ handleClose = () => {
             </Menu>
             <br />
 
-            <AddButton></AddButton>
+                <AddButton>
+
+                <Route path='/add-agency' render={(history) => (
+
+                <AddAgency>
+                  
+                  onCreateAgency={(agencies) => {
+                    this.createAgency(agencies)
+                   history.push('/') 
+                  }}
+                  
+                
+                </AddAgency>
+             
+            )} />
+             </AddButton>
+                
 
 
-
-            <ul
-              className="Ratings-form-questions">
+            <ul className="Ratings-form-questions">
             <li>
             <span>How often do they pay on time?</span>
             <Rating

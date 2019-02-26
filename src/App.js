@@ -9,6 +9,8 @@ import escapeRegExp from 'escape-string-regexp';
 import SignInButton from './SignInButton';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from './theme';
+//import { Route } from 'react-router-dom'
+import AddAgency from './AddAgency'
 
 /*
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -48,6 +50,15 @@ class App extends Component {
         })
       }
 
+/*Add Agency
+      createAgency(agency) {
+        AgenciesAPI.create(agency).then(agency => {
+          this.setState(state => ({
+            agencies: state.agencies.concat([ agencies ])
+          }))
+        })
+      }
+      */
 
 
   render() {
@@ -88,6 +99,7 @@ class App extends Component {
 
           <RatingsForm
             agencies={this.state.agencies}
+
             />
 
       </section>

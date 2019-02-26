@@ -83,7 +83,7 @@ main {
 .Ratings {
   margin: 0 0 0 20px;
   flex-flow: row nowrap;
-  height: 1000px;
+  height: 700px;
   border-bottom: 1px solid #8bc34a;
 }
 

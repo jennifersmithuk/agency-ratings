@@ -3,8 +3,8 @@ import Rating from 'react-rating';
 import escapeRegExp from 'escape-string-regexp';
 import sortBy from 'sort-by';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import starGrey from './star_grey_16.png';
-import starYellow from './star_green_16.png';
+import starGrey from './../../../images/star_grey_16.png';
+import starYellow from './../../../images/star_green_16.png';
 
 
 

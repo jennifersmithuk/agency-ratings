@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import AddButton from './AddButton';
 import Button from '@material-ui/core/Button';
 import Rating from 'react-rating';
-import starGrey from './star_grey_16.png';
-import starYellow from './star_green_16.png';
+import starGrey from './../../../images/star_grey_16.png';
+import starYellow from './../../../images/star_green_16.png';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import AddAgency from './AddAgency'

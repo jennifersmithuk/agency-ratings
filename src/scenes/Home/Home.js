@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './../../images/Stars_small.jpg';
-import './home.css';
+import './styles.scss';
 import ErrorBoundary from './../Home/components/ErrorBoundary';
 import RatingsResults from './../Home/components/RatingsResults';
 import RatingsForm from './../Home/components/RatingsForm';

@@ -1,0 +1,176 @@
+.App {
+  text-align: center; }
+
+.flex-container {
+  display: flex;
+  flex-flow: column wrap; }
+
+.App-logo {
+  display: inline;
+  border-radius: 15px;
+  align-self: flex-start;
+  margin: 0 0 0 10px; }
+
+a {
+  color: #8bc34a;
+  text-decoration: none; }
+
+a:hover, a:focus {
+  color: #8bc34a;
+  text-decoration: none;
+  outline: 2px solid #8bc34a; }
+
+.App-header {
+  background-color: black;
+  height: 125px;
+  width: 100%;
+  padding: 15px 0 15px 0;
+  color: white;
+  position: relative;
+  text-align: left;
+  align-self: flex-start; }
+
+.App-title {
+  text-align: left;
+  display: inline; }
+
+h1 {
+  font-size: 1.5em;
+  margin: 15px 0 0 0; }
+
+h2 {
+  font-size: 1em;
+  color: #8bc34a;
+  margin: 10px 0 0 0; }
+
+.Sign-in-button {
+  border: 1px solid;
+  border-radius: 10px;
+  float: left; }
+
+.App-about {
+  text-align: left;
+  color: #585858;
+  font-size: 1em;
+  margin: 10px 20px 10px 20px;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid #8bc34a; }
+
+.App-about-info {
+  margin: 0 0 0 10px; }
+
+main {
+  height: 100%; }
+
+.Ratings {
+  margin: 0 0 0 20px;
+  flex-flow: row nowrap;
+  height: 700px;
+  border-bottom: 1px solid #8bc34a; }
+
+.Ratings-results {
+  order: 1;
+  text-align: left;
+  color: #585858;
+  /*margin: auto;*/
+  margin: 0 10px 0 0;
+  max-width: calc(30% - 50px);
+  width: 30%;
+  overflow-y: auto; }
+
+li:focus {
+  text-decoration: none;
+  outline: 2px solid #8bc34a; }
+
+h3 {
+  font-size: 1em;
+  color: #8bc34a;
+  padding: 10px 0 20px 0; }
+
+.Search-box {
+  padding-top: 7px;
+  margin: 0 5px 15px 10px; }
+
+input:focus {
+  outline: 2px solid #8bc34a; }
+
+.Ratings-agencies-list {
+  list-style-type: none;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  font-size: 0.85em; }
+
+.Ratings-agencies-list li:hover {
+  color: #8bc34a; }
+
+.Ratings-list-names {
+  padding-bottom: 1px; }
+
+.Ratings-list-stars {
+  padding-left: 10px;
+  padding-top: 5px; }
+
+.Ratings-list-stars-form {
+  padding-left: 10px;
+  padding-top: 5px; }
+
+.Ratings-form {
+  order: 2;
+  color: #585858;
+  /*margin: auto;*/
+  max-width: calc(70% - 50px);
+  width: 70%;
+  align-self: baseline;
+  text-align: left;
+  /*display: inline-block;*/
+  display: flex;
+  flex-flow: column wrap; }
+
+.Ratings-form-questions {
+  list-style-type: none; }
+
+.Ratings-form-questions li:hover {
+  text-decoration: none;
+  color: #8bc34a; }
+
+.Form-main {
+  padding: 0 0 10px 10px; }
+
+.Form {
+  padding: 10px 0 10px 10px; }
+
+.Submit-button {
+  padding: 0 0 0 10px; }
+
+#footer {
+  display: block;
+  position: relative;
+  bottom: 0;
+  height: 55px;
+  width: 100%;
+  color: white;
+  background: black;
+  font-size: 8pt;
+  letter-spacing: 1px;
+  padding: 20px 0 20px 0;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase; }
+
+.Footer-text {
+  padding: 5px 5px 5px 5px;
+  color: white; }
+
+/* TODO not used yet...
+  .Error-alert {
+  
+  }
+  
+  @keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  @media queries...
+  
+  */

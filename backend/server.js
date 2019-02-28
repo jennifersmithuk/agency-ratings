@@ -10,7 +10,8 @@ require('dotenv').config()
 
 
 // set our port to either a predetermined port number if you have set it up, or 3001
-const API_PORT = process.env.API_PORT || 3001;
+//const API_PORT = process.env.API_PORT || 3001;
+const API_PORT = 3001;
 const app = express();
 const router = express.Router();
 
@@ -31,6 +32,9 @@ mongoose.connect(
   { useNewUrlParser: true }
 );
 */
+
+//NB error: pass option { useNewUrlParser: true } to MongoClient.connect.
+
 
 
 let db = mongoose.connection;

@@ -24,7 +24,7 @@ class RatingsForm extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-//TODO star value on click then on submit change JSON files and update average
+//TODO star value on click then on submit change JSON/database files and update average
 
   handleClick = ({ target: { agencies, value } }) =>
     this.setState({

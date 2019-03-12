@@ -29,7 +29,7 @@ class RatingsResults extends Component {
 
   render() {
 
-    let filterResults
+  let filterResults
   let { query } = this.state;
   let { agencies } = this.props;
 

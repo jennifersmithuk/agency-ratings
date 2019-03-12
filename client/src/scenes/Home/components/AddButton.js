@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
-import lime from '@material-ui/core/colors/lime';
+//import lime from '@material-ui/core/colors/lime';
 
 const styles = theme => ({
   button: {
@@ -11,7 +11,7 @@ const styles = theme => ({
   },
 });
 
-const primary = lime['A400']; // #8bc34a
+//const primary = lime['A400']; // #8bc34a
 
 
 function AddButton(props) {

@@ -4,11 +4,12 @@ import './styles.scss';
 import ErrorBoundary from './../Home/components/ErrorBoundary';
 import RatingsResults from './../Home/components/RatingsResults';
 import RatingsForm from './../Home/components/RatingsForm';
-import agencies from './../../agencies.json';
+//import agencies from './../../agencies.json';
 import escapeRegExp from 'escape-string-regexp';
 import SignInButton from './../Home/components/SignInButton';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from './../Home/components/theme';
+import axios from "axios";
 //import { Route } from 'react-router-dom'
 //import AddAgency from './scenes/Home/components/AddAgency'
 
@@ -20,20 +21,61 @@ library.add(faStar)
 */
 
 
-
 class Home extends Component {
 
   constructor(props) {
        super(props);
 
        this.state = {
-         agencies: [],
-         filterResults: [],
-         filterQuery: '',
+        agencies: [],
+        id: 0,
+        intervalIsSet: false,
+        idToUpdate: null,
+        objectToUpdate: null,
+        AgencyName: null,
+        AgencyLocationTown: null,
+        AgencyLocationRegion: null,
+        AgencyEmail: null,
+        RatingAverage: null,
+        RatingPayOnTime: null,
+        RatingNubsli: null,
+        RatingCommunication: null,
+        RatingOrganisation: null,
+        RatingWorkAgain: null,
+        RatingRecommend: null,
+        filterResults: [],
+        filterQuery: '',
            }
        };
 
+  // when component mounts, first thing it does is fetch all existing data in our db
+  // then we incorporate a polling logic so that we can easily see if our db has 
+  // changed and implement those changes into our UI
+  componentDidMount() {
+    this.getDataFromDb();
+    if (!this.state.intervalIsSet) {
+      let interval = setInterval(this.getDataFromDb, 2000);
+      this.setState({ 
+        intervalIsSet: interval, 
+        //agencies: data,
+        //filterResults: data
+      });
+      //console.log(agencies);
+    }
+  }
 
+  // never let a process live forever 
+  // always kill a process everytime we are done using it
+  componentWillUnmount() {
+    if (this.state.intervalIsSet) {
+      clearInterval(this.state.intervalIsSet);
+      this.setState({ 
+        intervalIsSet: null
+      });
+    }
+}
+
+/*
   componentDidMount() {
       this.setState({
         agencies: agencies,
@@ -41,6 +83,7 @@ class Home extends Component {
       })
     console.log(agencies);
     }
+    */
 
     //When query starts, filter results
     updateFilterResults(query) {
@@ -49,6 +92,7 @@ class Home extends Component {
           filterResults: this.state.agencies.filter((agencies) => match.test(agencies.AgencyName))
         })
       }
+      
 
 /*Add Agency
       createAgency(agency) {
@@ -59,6 +103,62 @@ class Home extends Component {
         })
       }
       */
+
+
+// just a note, here, in the front end, we use the id key of our data object 
+  // in order to identify which we want to Update or delete.
+  // for our back end, we use the object id assigned by MongoDB to modify 
+  // data base entries
+
+  // our first get method that uses our backend api to 
+  // fetch data from our data base
+  getDataFromDb = () => {
+    fetch("http://localhost:3001/api/getData") 
+      .then(data => data.json())
+      .then((res) => {
+        if (!res.success) this.setState({ error: res.error });
+        else this.setState({ 
+          agencies: res.data,
+          filterResults: res.data
+           });
+      });
+      console.log("got data!");
+      //console.log(data);
+  };
+
+  /*
+
+  // our put method that uses our backend api
+  // to create new query into our data base
+  putDataToDB = message => {
+    let currentIds = this.state.data.map(data => data.id);
+    let idToBeAdded = 0;
+    while (currentIds.includes(idToBeAdded)) {
+      ++idToBeAdded;
+    }
+
+    axios.post("http://localhost:3001/api/putData", {
+      id: idToBeAdded,
+      message: message
+    });
+  };
+
+  // our update method that uses our backend api
+  // to overwrite existing data base information
+  updateDB = (idToUpdate, updateToApply) => {
+    let objIdToUpdate = null;
+    this.state.data.forEach(dat => {
+      if (dat.id === idToUpdate) {
+        objIdToUpdate = dat._id;
+      }
+    });
+
+    axios.post("http://localhost:3001/api/updateData", {
+      id: objIdToUpdate,
+      update: { message: updateToApply }
+    });
+};
+*/
 
 
   render() {
@@ -107,7 +207,7 @@ class Home extends Component {
 
       <footer id="footer">
           <span className="Footer-text">Built by <a href="https://www.linkedin.com/in/jennifersmithuk">Jennifer Smith</a>
-          &nbsp;&nbsp;&nbsp;&nbsp;Vector Art by <a rel="nofollow" target="_blank" href="https://www.vecteezy.com">Vecteezy.com</a></span>
+          &nbsp;&nbsp;&nbsp;&nbsp;Vector Art by <a rel="noopener noreferrer nofollow" target="_blank" href="https://www.vecteezy.com">Vecteezy.com</a></span>
       </footer>
     </div>
     </MuiThemeProvider>

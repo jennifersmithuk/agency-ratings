@@ -19,9 +19,9 @@ const DataSchema = new Schema(
     RatingWorkAgain: Number,
     RatingRecommend: Number
   },
-
+  { collection : 'agencies' }   // collection name
 );
 
 // export the new Schema so we could modify it using Node.js
 module.exports = mongoose.model("Data", DataSchema);
-//export default mongoose.model("Data", DataSchema);
+

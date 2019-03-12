@@ -4,42 +4,45 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const Data = require("./data");
-//import Data from "./data";
-//import { getSecret } from './secrets';
-require('dotenv').config()
+const cors = require('cors');
+
+
+//Use dotenv to read .env vars into Node
+require('dotenv').config();
 
 
 // set our port to either a predetermined port number if you have set it up, or 3001
-//const API_PORT = process.env.API_PORT || 3001;
-const API_PORT = 3001;
+const API_PORT = process.env.API_PORT || 3001;
 const app = express();
 const router = express.Router();
 
+/***** NB: Change to WHITELIST for PRODUCTION: https://www.npmjs.com/package/cors 
+ * https://daveceddia.com/access-control-allow-origin-cors-errors-in-react-express/*****/
+app.use(cors());
+
 // this is our MongoDB database
 const dbRoute = process.env.DB_URI;
-console.log(dbRoute);
 
 
-// db config -- set your URI from mLab in secrets.js
-//mongoose.connect(getSecret('dbUri'));
-
-mongoose.connect(dbRoute);
-
-/*
 // connects our back end code with the database
 mongoose.connect(
   dbRoute,
   { useNewUrlParser: true }
 );
-*/
-
-//NB error: pass option { useNewUrlParser: true } to MongoClient.connect.
-
 
 
 let db = mongoose.connection;
 
-db.once("open", () => console.log("connected to the database"));
+db.once("open", function () { 
+
+console.log("connected to the database");
+db.collection("agencies", function(err, collection){
+  collection.find({}).toArray(function(err, data){
+      console.log(data); // it will print your collection data
+  })
+});
+});
+
 
 // checks if connection with the database is successful
 db.on("error", console.error.bind(console, "MongoDB connection error:"));

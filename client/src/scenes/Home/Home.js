@@ -4,7 +4,7 @@ import './styles.scss';
 import ErrorBoundary from './../Home/components/ErrorBoundary';
 import RatingsResults from './../Home/components/RatingsResults';
 import RatingsForm from './../Home/components/RatingsForm';
-import agencies from './../../agencies.json';
+//import agencies from './../../agencies.json';
 import escapeRegExp from 'escape-string-regexp';
 import SignInButton from './../Home/components/SignInButton';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
@@ -57,8 +57,8 @@ class Home extends Component {
       let interval = setInterval(this.getDataFromDb, 2000);
       this.setState({ 
         intervalIsSet: interval, 
-        //agencies: agencies,
-        //filterResults: agencies
+        //agencies: data,
+        //filterResults: data
       });
       //console.log(agencies);
     }
@@ -113,13 +113,17 @@ class Home extends Component {
   // our first get method that uses our backend api to 
   // fetch data from our data base
   getDataFromDb = () => {
-    fetch("http://localhost:3001/api/getData")
+    fetch("http://localhost:3001/api/getData") 
       .then(data => data.json())
       .then((res) => {
         if (!res.success) this.setState({ error: res.error });
-        else this.setState({ data: res.data });
+        else this.setState({ 
+          agencies: res.data,
+          filterResults: res.data
+           });
       });
       console.log("got data!");
+      //console.log(data);
   };
 
   /*

@@ -12,10 +12,10 @@ const DataSchema = new Schema(
     AgencyLocationRegion: String,
     AgencyEmail: String,
     RatingAverage: Number,
+    RatingSatisfaction: Number,
+    RatingService: Number,
     RatingPayOnTime: Number,
-    RatingNubsli: Number,
-    RatingCommunication: Number,
-    RatingOrganisation: Number,
+    RatingNUBSLI: Number,
     RatingWorkAgain: Number,
     RatingRecommend: Number
   },

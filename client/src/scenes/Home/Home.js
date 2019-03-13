@@ -37,10 +37,10 @@ class Home extends Component {
         AgencyLocationRegion: null,
         AgencyEmail: null,
         RatingAverage: null,
+        RatingSatisfaction: null,
+        RatingService: null,
         RatingPayOnTime: null,
-        RatingNubsli: null,
-        RatingCommunication: null,
-        RatingOrganisation: null,
+        RatingNUBSLI: null,
         RatingWorkAgain: null,
         RatingRecommend: null,
         filterResults: [],
@@ -56,11 +56,8 @@ class Home extends Component {
     if (!this.state.intervalIsSet) {
       let interval = setInterval(this.getDataFromDb, 2000);
       this.setState({ 
-        intervalIsSet: interval, 
-        //agencies: data,
-        //filterResults: data
+        intervalIsSet: interval
       });
-      //console.log(agencies);
     }
   }
 
@@ -75,23 +72,14 @@ class Home extends Component {
     }
 }
 
-/*
-  componentDidMount() {
-      this.setState({
-        agencies: agencies,
-        filterResults: agencies
-      })
-    console.log(agencies);
-    }
-    */
 
-    //When query starts, filter results
-    updateFilterResults(query) {
-        const match = new RegExp(escapeRegExp(query), 'i')
-        this.setState({
-          filterResults: this.state.agencies.filter((agencies) => match.test(agencies.AgencyName))
-        })
-      }
+  //When query starts, filter results
+  updateFilterResults(query) {
+      const match = new RegExp(escapeRegExp(query), 'i')
+      this.setState({
+        filterResults: this.state.agencies.filter((agencies) => match.test(agencies.AgencyName))
+      })
+    }
       
 
 /*Add Agency
@@ -123,7 +111,6 @@ class Home extends Component {
            });
       });
       console.log("got data!");
-      //console.log(data);
   };
 
   /*

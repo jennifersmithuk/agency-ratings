@@ -25,7 +25,6 @@ class RatingsForm extends Component {
   }
 
 //TODO star value on click then on submit change JSON/database files and update average
-
   handleClick = ({ target: { agencies, value } }) =>
     this.setState({
       agencies: value
@@ -56,7 +55,7 @@ handleClose = () => {
 
   render() {
 
-    const { RatingPayOnTime, RatingNubsliRates, RatingCommunication, RatingOrganisation, RatingWorkAgain, RatingRecommend } = this.state
+    const { RatingSatisfaction, RatingService, RatingPayOnTime, RatingNUBSLI, RatingWorkAgain, RatingRecommend } = this.state
     const { anchorEl } = this.state;
     let { agencies } = this.props;
 
@@ -127,10 +126,30 @@ handleClose = () => {
              
             )} />
              </AddButton>
-                
-
 
             <ul className="Ratings-form-questions">
+            <li>
+            <span>How would you rate your overall satisfaction with the agency?</span>
+            <Rating
+              className="Ratings-list-stars-form"
+              emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
+              placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
+              fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
+              value={RatingSatisfaction}
+              onChange={this.handleClick}
+            />
+        </li>
+        <li>
+            <span>How would you rate their service and support?</span>
+            <Rating
+              className="Ratings-list-stars-form"
+              emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
+              placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
+              fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
+              value={RatingService}
+              onChange={this.handleClick}
+            />
+        </li>
             <li>
             <span>How often do they pay on time?</span>
             <Rating
@@ -143,38 +162,16 @@ handleClose = () => {
             />
         </li>
           <li>
-            <span>How often do they pay NUBSLI rates?</span>
+            <span>How often do they pay in line with NUBSLI guidance?</span>
             <Rating
               className="Ratings-list-stars-form"
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
               fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
-              value={RatingNubsliRates}
+              value={RatingNUBSLI}
               onChange={this.handleClick}
             />
         </li>
-          <li>
-            <span>How well do they communicate?</span>
-            <Rating
-              className="Ratings-list-stars-form"
-              emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
-              placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
-              fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
-              value={RatingCommunication}
-              onChange={this.handleClick}
-            />
-          </li>
-            <li>
-            <span>How organised are they?</span>
-            <Rating
-              className="Ratings-list-stars-form"
-              emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
-              placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
-              fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
-              value={RatingOrganisation}
-              onChange={this.handleClick}
-            />
-          </li>
             <li>
             <span>How likely are you to work for them again?</span>
             <Rating

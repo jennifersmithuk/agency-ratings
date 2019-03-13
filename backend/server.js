@@ -38,7 +38,7 @@ db.once("open", function () {
 console.log("connected to the database");
 db.collection("agencies", function(err, collection){
   collection.find({}).toArray(function(err, data){
-      console.log(data); // it will print your collection data
+      console.log(data); // print collection data
   })
 });
 });

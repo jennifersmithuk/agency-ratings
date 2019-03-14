@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import AddButton from './AddButton';
+import AddButton from '../AddButton';
 import Button from '@material-ui/core/Button';
 import Rating from 'react-rating';
-import starGrey from './../../../images/star_grey_16.png';
-import starYellow from './../../../images/star_green_16.png';
+import starGrey from './../../../../images/star_grey_16.png';
+import starGreen from './../../../../images/star_green_16.png';
+//import starYellow from './../../../images/star_yellow_16.png';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import AddAgency from './AddAgency'
+import AddAgency from '../AddAgency'
 import { Route } from 'react-router-dom'
+import "./styles.scss";
 
 
 class RatingsForm extends Component {
@@ -16,21 +18,36 @@ class RatingsForm extends Component {
     super(props);
 
     this.state = {
-    value: 0,
     agencies: [],
     anchorEl: null,
+    RatingSatisfaction: '',
+    RatingService: '',
+    RatingPayOnTime: '',
+    RatingNUBSLI: '',
+    RatingWorkAgain: '',
+    RatingRecommend: '',
   }
-
     this.handleClick = this.handleClick.bind(this);
+    this.onChange = this.handleRatingSatisfaction.bind(this);
   }
 
+//TODO make sure state kept in controlled component - not rerender emplty rating
 //TODO star value on click then on submit change JSON/database files and update average
-  handleClick = ({ target: { agencies, value } }) =>
+handleRatingSatisfaction = (rating) => {
     this.setState({
-      agencies: value
+      RatingSatisfaction: rating  
     })
+    console.log(rating);
+  }
+    
+    /*
+EXAMPLE from SO...
+    handleStaffRatingChange = (rating) => {
+      this.setState({...this.state, form: {...this.state.form, staffRate: rating}});
+  }
+  */
 
-//TODO check function updates values
+//TODO check function updates values - CHANGE to submit form NOT change DB
   handleSubmit = e => {
   e.preventDefault()
 
@@ -42,12 +59,12 @@ class RatingsForm extends Component {
   }
 }
 
-// Handle menu selection
+// Handle dropdown selection
 handleClick = event => {
   this.setState({ anchorEl: event.currentTarget });
 };
 
-// Handle menu close
+// Handle dropdown close
 handleClose = () => {
   this.setState({ anchorEl: null });
 };
@@ -61,9 +78,9 @@ handleClose = () => {
 
     return (
 
-      <div className="Ratings-form">
+      <div className="ratings-form">
         <h3>Rate the agency</h3>
-          <div className="Form-main">
+          <div className="ratings-form-main">
 
           <div>There are 6 questions to rate the agency on, out of 5. The average is worked out and displayed in the results.</div>
           <br />
@@ -73,7 +90,7 @@ handleClose = () => {
           <br />
 
           <form
-            className="Form"
+            className="ratings-form-form"
             onSubmit={this.handleSubmit}
             >
 
@@ -95,7 +112,7 @@ handleClose = () => {
             >
             {agencies.map(agencies => (
             <MenuItem
-              className="Ratings-list-names"
+              className="ratings-form-list-names"
               key={agencies.id}
               value={agencies.AgencyName}
               tabIndex={0}
@@ -127,78 +144,78 @@ handleClose = () => {
             )} />
              </AddButton>
 
-            <ul className="Ratings-form-questions">
+            <ul className="ratings-form-questions">
             <li>
-            <span>How would you rate your overall satisfaction with the agency?</span>
+            <span>How would you rate your overall satisfaction with the agency?</span>            
             <Rating
-              className="Ratings-list-stars-form"
+              className="ratings-form-stars-list"
+              initialRating={3}
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
-              fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
-              value={RatingSatisfaction}
-              onChange={this.handleClick}
+              fullSymbol={<img src={starGreen} className="icon" alt="Filled Green Star" />}
+              onChange={this.handleRatingSatisfaction.bind(this)}
             />
         </li>
         <li>
             <span>How would you rate their service and support?</span>
             <Rating
-              className="Ratings-list-stars-form"
+              className="Ratings-form-stars-list"
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
-              fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
-              value={RatingService}
-              onChange={this.handleClick}
+              fullSymbol={<img src={starGreen} className="icon" alt="Filled Green Star" />}
+              //value={RatingService}
+              //onChange={this.handleClick}
             />
         </li>
             <li>
             <span>How often do they pay on time?</span>
             <Rating
-              className="Ratings-list-stars-form"
+              className="Ratings-form-stars-list"
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
-              fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
-              value={RatingPayOnTime}
-              onChange={this.handleClick}
+              fullSymbol={<img src={starGreen} className="icon" alt="Filled Green Star" />}
+              //value={RatingPayOnTime}
+              //onChange={this.handleClick}
             />
         </li>
           <li>
             <span>How often do they pay in line with NUBSLI guidance?</span>
             <Rating
-              className="Ratings-list-stars-form"
+              className="Ratings-form-stars-list"
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
-              fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
-              value={RatingNUBSLI}
-              onChange={this.handleClick}
+              fullSymbol={<img src={starGreen} className="icon" alt="Filled Green Star" />}
+              //value={RatingNUBSLI}
+              //onChange={this.handleClick}
             />
         </li>
             <li>
             <span>How likely are you to work for them again?</span>
             <Rating
-              className="Ratings-list-stars-form"
+              className="Ratings-form-stars-list"
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
-              fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
-              value={RatingWorkAgain}
-              onChange={this.handleClick}
+              fullSymbol={<img src={starGreen} className="icon" alt="Filled Green Star" />}
+              //value={RatingWorkAgain}
+              //onChange={this.handleClick}
             />
           </li>
             <li>
             <span>How likely are you to recommend them to another interpreter/client?</span>
             <Rating
-              className="Ratings-list-stars-form"
+              className="Ratings-form-stars-list"
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
-              fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
-              value={RatingRecommend}
-              onChange={this.handleClick}
+              fullSymbol={<img src={starGreen} className="icon" alt="Filled Green Star" />}
+              //value={RatingRecommend}
+              //onChange={this.handleClick}
             />
         </li>
       </ul>
         <br />
 
          <Button
-            className='Submit-button'
+            className='ratings-form-submit-button'
             type='submit'
             color='primary'
             variant='raised'

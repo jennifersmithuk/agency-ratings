@@ -78,6 +78,8 @@ class RatingsResults extends Component {
                   {agencies.AgencyName}
                   <Rating
                     className="Ratings-list-stars"
+                    initialRating={this.props.RatingAverage}
+                    readonly
                     emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
                     placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
                     fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}

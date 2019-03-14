@@ -3,7 +3,7 @@ import logo from './../../images/Stars_small.jpg';
 import './styles.scss';
 import ErrorBoundary from './../Home/components/ErrorBoundary';
 import RatingsResults from './../Home/components/RatingsResults';
-import RatingsForm from './../Home/components/RatingsForm';
+import RatingsForm from './components/RatingsForm/RatingsForm';
 //import agencies from './../../agencies.json';
 import escapeRegExp from 'escape-string-regexp';
 import SignInButton from './../Home/components/SignInButton';

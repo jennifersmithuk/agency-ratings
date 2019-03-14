@@ -138,40 +138,6 @@
     padding-top: 5px;
   }
   
-  .Ratings-form {
-    order: 2;
-    color: #585858;
-    /*margin: auto;*/
-    max-width: calc(70% - 50px);
-    width: 70%;
-    align-self: baseline;
-    text-align: left;
-    /*display: inline-block;*/
-    display: flex;
-    flex-flow: column wrap;
-  }
-  
-  .Ratings-form-questions {
-    list-style-type: none;
-  }
-  
-  .Ratings-form-questions li:hover {
-    text-decoration: none;
-    color: #8bc34a;
-  }
-  
-  .Form-main {
-    padding: 0 0 10px 10px;
-  }
-  
-  .Form {
-    padding: 10px 0 10px 10px;
-  }
-  
-  .Submit-button {
-    padding: 0 0 0 10px;
-  
-  }
   
   #footer {
     display: block;

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import logo from './../../images/Stars_small.jpg';
 import './styles.css';
 import ErrorBoundary from './../Home/components/ErrorBoundary';
 import RatingsResults from './../Home/components/RatingsResults';
 import RatingsForm from './components/RatingsForm/RatingsForm';
 //import agencies from './../../agencies.json';
 import escapeRegExp from 'escape-string-regexp';
-import { Button } from 'semantic-ui-react';
+import { Container, Button, Header, Segment, Menu } from 'semantic-ui-react';
+import HomepageHeading from './HomepageHeading';
 
 //import axios from "axios";
 //import { Route } from 'react-router-dom'
@@ -39,6 +39,9 @@ class Home extends Component {
         filterQuery: '',
            }
        };
+
+       hideFixedMenu = () => this.setState({ fixed: false })
+       showFixedMenu = () => this.setState({ fixed: true })
 
   // when component mounts, first thing it does is fetch all existing data in our db
   // then we incorporate a polling logic so that we can easily see if our db has 
@@ -130,26 +133,54 @@ class Home extends Component {
 
 
   render() {
+
+    const { fixed } = this.state
+
     return (
 
       <ErrorBoundary>
 
-      <div className="App flex-container">
-        <header className="App-header flex-container">
-          <img src={logo} className="App-logo" alt="Logo of 6 Green Stars with different ratings" />
-          <h1 className="App-title">Welcome to Agency Ratings</h1>
-          <h2>where interpreters rate agencies they like, and the ones they don't</h2>
-     
-        </header>
+          <Segment
+            inverted
+            textAlign='center'
+            style={{ minHeight: 400, padding: '1em 0em' }}
+            vertical
+          >
+            <Menu
+              fixed={fixed ? 'top' : null}
+              inverted={!fixed}
+              pointing={!fixed}
+              secondary={!fixed}
+              size='large'
+            >
+              <Container>
+                <Menu.Item as='a' active>
+                  Home
+                </Menu.Item>
+                <Menu.Item as='a'>About</Menu.Item>
+                <Menu.Item as='a'>Rate an Agency</Menu.Item>
+                <Menu.Item as='a'>Ratings Results</Menu.Item>
+                <Menu.Item position='right'>
+                
+                  <Button as='a' inverted={!fixed}>
+                    Log in
+                  </Button>
+                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
+                    Sign Up
+                  </Button>
+                </Menu.Item>
+              </Container>
+            </Menu>
+            <HomepageHeading/>
+        </Segment>
+
       <main>
 
         <div className="App-about">
           <h3 className="App-about-heading">About Agency Ratings</h3>
           <div className="App-about-info">
           <p>Most interpreters are freelance, working for a variety of agencies and direct clients.</p>
-          <br />
           <p>There are a multitude of agencies. Relying on word of mouth isn't enough.</p>
-          <br />
           <p>Transparency and clarity for all. Finally, a way to rate agencies in a safe way.</p>
         </div>
         </div>
@@ -166,7 +197,6 @@ class Home extends Component {
             agencies={this.state.agencies}
 
             />
-
       </section>
       </main>
 
@@ -174,7 +204,6 @@ class Home extends Component {
           <span className="Footer-text">Built by <a href="https://www.linkedin.com/in/jennifersmithuk">Jennifer Smith</a>
           &nbsp;&nbsp;&nbsp;&nbsp;Vector Art by <a rel="noopener noreferrer nofollow" target="_blank" href="https://www.vecteezy.com">Vecteezy.com</a></span>
       </footer>
-    </div>
 
     </ErrorBoundary>
 

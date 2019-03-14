@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Rating from 'react-rating';
 import escapeRegExp from 'escape-string-regexp';
 import sortBy from 'sort-by';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import starGrey from './../../../images/star_grey_16.png';
 import starYellow from './../../../images/star_green_16.png';
+import { Input } from 'semantic-ui-react';
 
 
 
@@ -50,7 +50,7 @@ class RatingsResults extends Component {
       <section className="Ratings-results">
         <h3>The best and the worst...</h3>
 
-        <input
+        <Input
           className="Search-box"
           aria-label="Search for Agencies"
           tabIndex={0}

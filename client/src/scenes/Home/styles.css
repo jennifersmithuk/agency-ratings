@@ -10,9 +10,8 @@
   .App-logo {
     display: inline;
     border-radius: 15px;
-    align-self: flex-start;
-    margin: 0 0 0 10px;
-    height: 100%;
+    height: 100px;
+    justify-items: center;
   }
   
   a {
@@ -139,6 +138,9 @@
     padding-top: 5px;
   }
   
+  .start-button {
+    color: greenyellow;
+  }
   
   #footer {
     display: block;

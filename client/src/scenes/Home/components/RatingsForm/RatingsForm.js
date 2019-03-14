@@ -3,7 +3,7 @@ import Rating from 'react-rating';
 import starGrey from './../../../../images/star_grey_16.png';
 import starGreen from './../../../../images/star_green_16.png';
 //import starYellow from './../../../images/star_yellow_16.png';
-import { Button, Menu } from 'semantic-ui-react';
+import { Button, Menu, Icon, Input, Form } from 'semantic-ui-react';
 
 //import AddAgency from '../AddAgency'
 //import { Route } from 'react-router-dom'
@@ -63,7 +63,6 @@ EXAMPLE from SO...
   render() {
 
     const { RatingSatisfaction, RatingService, RatingPayOnTime, RatingNUBSLI, RatingWorkAgain, RatingRecommend } = this.state
-    const { activeItem } = this.state;
     let { agencies } = this.props;
 
     return (
@@ -82,12 +81,9 @@ EXAMPLE from SO...
           <div>We have a strict privacy policy and your data is secure.</div>
           <br />
 
-          <form
-            className="ratings-form-form"
-            //onSubmit={this.handleSubmit}
-            >
+          <Form>
 
-{/*
+
             <Button
               aria-haspopup="true"
               onClick={this.handleClick}
@@ -105,8 +101,6 @@ EXAMPLE from SO...
               className="ratings-form-list-names"
               key={agencies.id}
               value={agencies.AgencyName}
-              tabIndex={0}
-              role="menuitem"
               //onClick={this.handleItemClick}
               >
               {agencies.AgencyName}
@@ -133,7 +127,7 @@ EXAMPLE from SO...
         <li>
             <span>How would you rate their service and support?</span>
             <Rating
-              className="Ratings-form-stars-list"
+              className="ratings-form-stars-list"
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
               fullSymbol={<img src={starGreen} className="icon" alt="Filled Green Star" />}
@@ -144,7 +138,7 @@ EXAMPLE from SO...
             <li>
             <span>How often do they pay on time?</span>
             <Rating
-              className="Ratings-form-stars-list"
+              className="ratings-form-stars-list"
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
               fullSymbol={<img src={starGreen} className="icon" alt="Filled Green Star" />}
@@ -155,7 +149,7 @@ EXAMPLE from SO...
           <li>
             <span>How often do they pay in line with NUBSLI guidance?</span>
             <Rating
-              className="Ratings-form-stars-list"
+              className="ratings-form-stars-list"
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
               fullSymbol={<img src={starGreen} className="icon" alt="Filled Green Star" />}
@@ -166,7 +160,7 @@ EXAMPLE from SO...
             <li>
             <span>How likely are you to work for them again?</span>
             <Rating
-              className="Ratings-form-stars-list"
+              className="ratings-form-stars-list"
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
               fullSymbol={<img src={starGreen} className="icon" alt="Filled Green Star" />}
@@ -177,7 +171,7 @@ EXAMPLE from SO...
             <li>
             <span>How likely are you to recommend them to another interpreter/client?</span>
             <Rating
-              className="Ratings-form-stars-list"
+              className="ratings-form-stars-list"
               emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
               placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
               fullSymbol={<img src={starGreen} className="icon" alt="Filled Green Star" />}
@@ -188,22 +182,10 @@ EXAMPLE from SO...
       </ul>
         <br />
 
-         <Button
-            className='ratings-form-submit-button'
-            type='submit'
-          >
-            Submit
-          </Button>
-*/}
-       </form>
 
-
-
+       </Form>
           </div>
-
           </div>
-
-
     );
 }
 }

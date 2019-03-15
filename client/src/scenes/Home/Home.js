@@ -5,7 +5,7 @@ import RatingsResults from './../Home/components/RatingsResults';
 import RatingsForm from './components/RatingsForm/RatingsForm';
 //import agencies from './../../agencies.json';
 import escapeRegExp from 'escape-string-regexp';
-import { Container, Button, Header, Segment, Menu } from 'semantic-ui-react';
+import { Container, Button, Segment, Menu } from 'semantic-ui-react';
 import HomepageHeading from './HomepageHeading';
 
 //import axios from "axios";

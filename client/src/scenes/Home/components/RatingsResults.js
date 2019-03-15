@@ -7,7 +7,6 @@ import starYellow from './../../../images/star_green_16.png';
 import { Input } from 'semantic-ui-react';
 
 
-
 class RatingsResults extends Component {
 
   constructor(props){

@@ -5,8 +5,8 @@ import RatingsResults from './../Home/components/RatingsResults';
 import RatingsForm from './components/RatingsForm/RatingsForm';
 //import agencies from './../../agencies.json';
 import escapeRegExp from 'escape-string-regexp';
-import { Container, Button, Segment, Menu } from 'semantic-ui-react';
-import Header from './../Home/components/Header';
+import { Container, Header, Icon, Grid } from 'semantic-ui-react';
+import MainHeader from './components/MainHeader';
 import Footer from './../Home/components/Footer';
 
 //import axios from "axios";
@@ -139,18 +139,26 @@ class Home extends Component {
 
       <ErrorBoundary>
 
-        <Header />
+        <MainHeader />
 
-      <main>
-
-        <div className="App-about">
-          <h3 className="App-about-heading">About Agency Ratings</h3>
-          <div className="App-about-info">
-          <p>Most interpreters are freelance, working for a variety of agencies and direct clients.</p>
-          <p>There are a multitude of agencies. Relying on word of mouth isn't enough.</p>
-          <p>Transparency and clarity for all. Finally, a way to rate agencies in a safe way.</p>
-        </div>
-        </div>
+        <Container 
+          text
+          className="App-about" >
+          <Grid relaxed columns={3} className="App-about-info">
+            <Grid.Column>
+            <Icon name='sign language' color='olive' size='big' className="App-about-icons" />
+              <p className="App-about-column-text">Most interpreters are freelance, working for a variety of agencies and direct clients.</p>
+            </Grid.Column>
+            <Grid.Column>
+            <Icon name='talk' size='big' color='green' className="App-about-icons" />
+              <p className="App-about-column-text">There are a multitude of agencies. Not all are reputable and relying on word of mouth isn't enough.</p>
+            </Grid.Column>
+            <Grid.Column>
+            <Icon name='star' size='big' color='teal' className="App-about-icons" />
+            <p className="App-about-column-text">Transparency and clarity for freelancers is vital... <br/> Finally, we can rate agencies in a safe way.</p>
+            </Grid.Column>
+          </Grid>
+        </Container>
 
         <section className="Ratings flex-container">
 
@@ -165,12 +173,10 @@ class Home extends Component {
 
             />
       </section>
-      </main>
 
-      <Footer>
-        
-      </Footer>
-     
+  
+
+      <Footer />
 
     </ErrorBoundary>
 

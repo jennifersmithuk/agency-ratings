@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Button, Header, Icon, Image } from 'semantic-ui-react';
-import logo from './../../images/Stars_small.jpg';
+import logo from './../../../images/Stars_small.jpg';
 
 const HomepageHeading = ({ mobile }) => (
     

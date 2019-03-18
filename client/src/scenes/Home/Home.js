@@ -6,7 +6,8 @@ import RatingsForm from './components/RatingsForm/RatingsForm';
 //import agencies from './../../agencies.json';
 import escapeRegExp from 'escape-string-regexp';
 import { Container, Button, Segment, Menu } from 'semantic-ui-react';
-import HomepageHeading from './HomepageHeading';
+import Header from './../Home/components/Header';
+import Footer from './../Home/components/Footer';
 
 //import axios from "axios";
 //import { Route } from 'react-router-dom'
@@ -40,8 +41,7 @@ class Home extends Component {
            }
        };
 
-       hideFixedMenu = () => this.setState({ fixed: false })
-       showFixedMenu = () => this.setState({ fixed: true })
+       
 
   // when component mounts, first thing it does is fetch all existing data in our db
   // then we incorporate a polling logic so that we can easily see if our db has 
@@ -139,42 +139,7 @@ class Home extends Component {
 
       <ErrorBoundary>
 
-          <Segment
-            inverted
-            textAlign='center'
-            style={{ minHeight: 400, padding: '1em 0em' }}
-            vertical
-          >
-            <Menu
-              fixed={fixed ? 'top' : null}
-              inverted={!fixed}
-              pointing={!fixed}
-              secondary={!fixed}
-              size='large'
-            >
-              <Container>
-                <Menu.Item as='a' active>
-                  Home
-                </Menu.Item>
-                <Menu.Item as='a'>About</Menu.Item>
-                <Menu.Item as='a'>Rate an Agency</Menu.Item>
-                <Menu.Item as='a'>Ratings Results</Menu.Item>
-                <Menu.Item position='right'>
-                
-                  <Button as='a' inverted={!fixed}>
-                    Log in
-                  </Button>
-                  <Button as='a' 
-                    inverted={!fixed} 
-                    primary={fixed} 
-                    style={{ marginLeft: '0.5em' }}>
-                    Sign Up
-                  </Button>
-                </Menu.Item>
-              </Container>
-            </Menu>
-            <HomepageHeading/>
-        </Segment>
+        <Header />
 
       <main>
 
@@ -202,10 +167,10 @@ class Home extends Component {
       </section>
       </main>
 
-      <footer id="footer">
-          <span className="Footer-text">Built by <a href="https://www.linkedin.com/in/jennifersmithuk">Jennifer Smith</a>
-          &nbsp;&nbsp;&nbsp;&nbsp;Vector Art by <a rel="noopener noreferrer nofollow" target="_blank" href="https://www.vecteezy.com">Vecteezy.com</a></span>
-      </footer>
+      <Footer>
+        
+      </Footer>
+     
 
     </ErrorBoundary>
 

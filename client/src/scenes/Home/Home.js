@@ -67,7 +67,6 @@ class Home extends Component {
     }
 }
 
-
   //When query starts, filter results
   updateFilterResults(query) {
       const match = new RegExp(escapeRegExp(query), 'i')
@@ -165,7 +164,10 @@ class Home extends Component {
                   <Button as='a' inverted={!fixed}>
                     Log in
                   </Button>
-                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
+                  <Button as='a' 
+                    inverted={!fixed} 
+                    primary={fixed} 
+                    style={{ marginLeft: '0.5em' }}>
                     Sign Up
                   </Button>
                 </Menu.Item>

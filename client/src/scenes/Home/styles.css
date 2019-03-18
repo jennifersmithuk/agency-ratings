@@ -15,14 +15,14 @@
   }
   
   a {
-    color: #8bc34a;
+    color: green;
     text-decoration: none;
   }
   
   a:hover, a:focus {
-    color: #8bc34a;
+    color: green;
     text-decoration: none;
-    outline: 2px solid #8bc34a;
+    outline: 1px solid green;
     }
   
   .App-header {
@@ -48,7 +48,7 @@
   
   h2 {
     font-size: 16px;
-    color: #8bc34a;
+    color: green;
     margin: 10px 0 0 0;
   }
   
@@ -60,11 +60,10 @@
   
   .App-about {
     text-align: left;
-    color: #585858;
     font-size: 1em;
     margin: 10px 20px 10px 20px;
     padding: 0 0 20px 0;
-    border-bottom: 1px solid #8bc34a;
+    border-bottom: 1px solid green;
   }
   
   .App-about-info {
@@ -79,13 +78,12 @@
     margin: 0 0 0 20px;
     flex-flow: row nowrap;
     height: 700px;
-    border-bottom: 1px solid #8bc34a;
+    border-bottom: 1px solid green;
   }
   
   .Ratings-results {
     order: 1;
     text-align: left;
-    color: #585858;
     /*margin: auto;*/
     margin: 0 10px 0 0;
     max-width: calc(30% - 50px);
@@ -95,12 +93,12 @@
   
   li:focus {
     text-decoration: none;
-    outline: 2px solid #8bc34a;
+    outline: 1px solid green;
     }
   
   h3 {
     font-size: 1em;
-    color: #8bc34a;
+    color: green;
     padding: 10px 0 20px 0;
   }
   
@@ -110,7 +108,7 @@
   }
   
   input:focus {
-    outline: 2px solid #8bc34a;
+    outline: 1px solid green;
   }
   
   .Ratings-agencies-list {
@@ -121,7 +119,7 @@
   }
   
   .Ratings-agencies-list li:hover {
-    color: #8bc34a;
+    color: green;
   }
   
   .Ratings-list-names {
@@ -139,7 +137,7 @@
   }
   
   .start-button {
-    color: greenyellow;
+    color: green;
   }
   
   #footer {

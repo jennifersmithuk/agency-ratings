@@ -1,6 +1,5 @@
 .ratings-form {
   order: 2;
-  color: #585858;
   /*margin: auto;*/
   max-width: calc(70% - 50px);
   width: 70%;
@@ -22,7 +21,7 @@
 
 .ratings-form-questions li:hover {
   text-decoration: none;
-  color: #8bc34a;
+  color: green;
   }
 
 .ratings-form-form {

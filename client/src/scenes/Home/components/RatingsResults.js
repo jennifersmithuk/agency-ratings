@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import Rating from 'react-rating';
 import escapeRegExp from 'escape-string-regexp';
 import sortBy from 'sort-by';
-import starGrey from './../../../images/star_grey_16.png';
-import starYellow from './../../../images/star_green_16.png';
-import { Input } from 'semantic-ui-react';
+import { Input, Rating } from 'semantic-ui-react';
 
 
 class RatingsResults extends Component {
@@ -76,12 +73,12 @@ class RatingsResults extends Component {
                   >
                   {agencies.AgencyName}
                   <Rating
-                    className="Ratings-list-stars"
-                    initialRating={this.props.RatingAverage}
-                    readonly
-                    emptySymbol={<img src={starGrey} className="icon" alt="Grey Placeholder Star"/>}
-                    placeholderSymbol={<img src={starGrey} className="icon" alt="Grey Star" />}
-                    fullSymbol={<img src={starYellow} className="icon" alt="Yellow Star" />}
+                    //defaultRating={this.props.RatingAverage}
+                    defaultRating={3}
+                    maxRating={5}
+                    disabled
+                    icon='star'
+                    size='tiny'
                   />
                 </li>
              ))

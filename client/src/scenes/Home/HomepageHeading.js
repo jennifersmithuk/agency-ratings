@@ -33,9 +33,9 @@ const HomepageHeading = ({ mobile }) => (
         }}
       />
       <Button 
-        primary size="large"
+        size="large"
         color="green"
-        className="start-button">
+        >
         Get Started
         <Icon name='right arrow' />
       </Button>

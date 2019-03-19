@@ -1,48 +1,4 @@
-  .App {
-    text-align: center;
-  }
-  
-  .flex-container {
-    display: flex;
-    flex-flow: column wrap;
-  }
-  
-  .App-logo {
-    display: inline;
-    border-radius: 15px;
-    height: 100px;
-    justify-items: center;
-  }
-  
-  a {
-    color: green;
-    text-decoration: none;
-  }
-  
-  a:hover, a:focus {
-    color: green;
-    text-decoration: none;
-    outline: 1px solid green;
-    }
-  
-  .App-header {
-    background-color: black;
-    height: 125px;
-    width: 100%;
-    padding: 15px 0 15px 0;
-    color: white;
-    position: relative;
-    text-align: center;
-    align-self: flex-start;
-  }
-  
-  .App-title {
-    text-align: left;
-    display: inline;
-    font-size: 23px;
-  }
-  
-  h1 {
+h1 {
     margin: 15px 0 0 0;
   }
   
@@ -50,12 +6,6 @@
     font-size: 16px;
     color: green;
     margin: 10px 0 0 0;
-  }
-  
-  .Sign-in-button {
-    border: 1px solid;
-    border-radius: 10px;
-    float: left;
   }
   
   .App-about {
@@ -76,25 +26,18 @@
   .App-about-column-text {
     margin-top: 20px;
   }
-  
-  main {
-    height: 100%;
-  }
-  
+
+/*Ratings Results section */
   .Ratings {
-    margin: 0 0 0 20px;
-    flex-flow: row nowrap;
-    height: 700px;
+    margin: 20px 0;
+    height: 200px; /*TODO code out top 5/worse 5 section and decide height */
     border-bottom: 1px solid green;
   }
   
   .Ratings-results {
-    order: 1;
     text-align: left;
     /*margin: auto;*/
     margin: 0 10px 0 0;
-    max-width: calc(30% - 50px);
-    width: 30%;
     overflow-y: auto;
   }
   
@@ -143,30 +86,8 @@
     padding-top: 5px;
   }
   
-  .start-button {
-    color: green;
-  }
   
-  #footer {
-    display: block;
-    position: relative;
-    bottom: 0;
-    height: 55px;
-    width: 100%;
-    color: white;
-    background: black;
-    font-size: 8pt;
-    letter-spacing: 1px;
-    padding: 20px 0 20px 0;
-    text-align: center;
-    justify-content: center;
-    text-transform: uppercase;
-  }
   
-  .Footer-text {
-    padding: 5px 5px 5px 5px;;
-    color: white;
-  }
   
   
   /* TODO not used yet...

@@ -6,8 +6,8 @@ import RatingsForm from './components/RatingsForm/RatingsForm';
 //import agencies from './../../agencies.json';
 import escapeRegExp from 'escape-string-regexp';
 import { Container, Header, Icon, Grid } from 'semantic-ui-react';
-import MainHeader from './components/MainHeader';
-import Footer from './../Home/components/Footer';
+import MainHeader from './components/Header/MainHeader';
+import Footer from './components/Footer';
 
 //import axios from "axios";
 //import { Route } from 'react-router-dom'
@@ -160,21 +160,27 @@ class Home extends Component {
           </Grid>
         </Container>
 
-        <section className="Ratings flex-container">
+        <Container 
+          text
+          className="Ratings" >
+
 
           <RatingsResults
             agencies={this.state.agencies}
             filterResults={this.state.filterResults}
             updateFilterResults={this.updateFilterResults.bind(this)}
             />
+          </Container>
 
+
+          <Container 
+          text >
           <RatingsForm
             agencies={this.state.agencies}
 
             />
-      </section>
+        </Container>
 
-  
 
       <Footer />
 

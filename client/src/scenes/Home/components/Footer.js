@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import { Container, Segment, Grid, Header, List, Icon } from 'semantic-ui-react';
 
-const Footer = ({ mobile }) => (
+
+class Footer extends Component {
+  state = {}
+  
+  
+  render() {
+    
+    
+    return (
 
 <Segment inverted vertical style={{ padding: '5em 0em' }}>
       <Container>
@@ -23,7 +31,7 @@ const Footer = ({ mobile }) => (
                 <List.Item as='a'>Add an agency</List.Item>
                 <List.Item as='a'>Rate an agency</List.Item>
                 {/*<List.Item as='a'>See your past ratings</List.Item>*/}
-                <List.Item as='a'>Sign up to receive further info</List.Item>
+                <List.Item as='a'>Sign up for info</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
@@ -40,9 +48,13 @@ const Footer = ({ mobile }) => (
     </Segment>
 
 )
+    }
+  }
 
-    export default Footer;
+  export default Footer;
 
+  /*
   Footer.propTypes = {
     mobile: PropTypes.bool,
   }
+  */

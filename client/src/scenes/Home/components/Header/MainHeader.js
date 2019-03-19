@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Button, Segment, Menu } from 'semantic-ui-react';
 import HomepageHeading from './HomepageHeading';
-
+import './styles.css';
 
 
 class Header extends Component {
@@ -20,18 +20,18 @@ class Header extends Component {
 //const Header = ({ mobile }) => (
 
     <Segment
-    inverted
-    textAlign='center'
-    style={{ minHeight: 400, padding: '1em 0em' }}
-    vertical
-  >
-    <Menu
-      fixed={fixed ? 'top' : null}
-      inverted={!fixed}
-      pointing={!fixed}
-      secondary={!fixed}
-      size='large'
-    >
+      inverted
+      textAlign='center'
+      style={{ minHeight: 420, padding: '1em 0em' }}
+      vertical
+      >
+      <Menu
+        fixed={fixed ? 'top' : null}
+        inverted={!fixed}
+        pointing={!fixed}
+        secondary={!fixed}
+        size='large'
+      >
       <Container>
         <Menu.Item as='a' active>
           Home
@@ -55,14 +55,14 @@ class Header extends Component {
     </Menu>
     <HomepageHeading/>
 </Segment>
-        
-
-)
-      }
-    }
+  )
+  }
+}
 
 export default Header;
 
+/*
 Header.propTypes = {
   mobile: PropTypes.bool,
 }
+*/

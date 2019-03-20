@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import escapeRegExp from 'escape-string-regexp';
 import sortBy from 'sort-by';
-import { Input, Rating } from 'semantic-ui-react';
+import { Header, Input, Rating } from 'semantic-ui-react';
 
 
 class RatingsResults extends Component {
@@ -44,7 +44,7 @@ class RatingsResults extends Component {
     return (
 
       <section className="Ratings-results">
-        <h3>The best and the worst...</h3>
+        <Header as='h3' color='green'content="The best and the worst..." />
 
         <Input
           className="Search-box"

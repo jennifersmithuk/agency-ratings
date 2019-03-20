@@ -13,7 +13,6 @@ const HomepageHeading = () => (
       <Header
         as='h1'
         content='Welcome to Agency Ratings'
-        className="App-title"
         inverted
       
       />
@@ -21,8 +20,6 @@ const HomepageHeading = () => (
         as='h2'
         content="where interpreters rate agencies they like... and the ones they don't"
         inverted
-        className="App-subtitle"
-  
       />
       <Button 
         size="large"

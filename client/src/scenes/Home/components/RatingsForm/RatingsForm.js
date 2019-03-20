@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Menu, Icon, Input, Form, Dropdown, Rating } from 'semantic-ui-react';
+import { Button, Menu, Icon, Input, Form, Dropdown, Rating, Container, Header, Segment } from 'semantic-ui-react';
 
 //import AddAgency from '../AddAgency'
 //import { Route } from 'react-router-dom'
@@ -69,24 +69,21 @@ EXAMPLE from SO...
     const { agencies } = this.props;
 
     return (
-
-      
+ 
       <div className="ratings-form">
-      
-
-        <h3>Rate the agency</h3>
+      <Container>
+        <Header as='h3' color='green'content="Rate an Agency" />
           <div className="ratings-form-main">
+          <p>There are 6 quick questions to rate the agency on, out of 5. The average is worked out and displayed in the results.</p>
+          <p>You must be logged in to give your ratings so we can verify that you're an interpreter and not a robot.</p>
+          <p>We have a strict privacy policy and your data is secure.</p>
+          </div>
+          </Container>
 
-          <div>There are 6 questions to rate the agency on, out of 5. The average is worked out and displayed in the results.</div>
-          <br />
-          <div>You must be logged in to give your ratings so we can verify that you're an interpreter, and not a robot or working for an agency. Ahem.</div>
-          <br />
-          <div>We have a strict privacy policy and your data is secure.</div>
-          <br />
 
           <Form>
-
-            <Dropdown
+            <Form.Field required>
+            <Form.Dropdown required
               placeholder='Click or start typing to select agency'
               fluid
               search
@@ -99,73 +96,83 @@ EXAMPLE from SO...
                 value: agencies.AgencyName,
             }))}
             />
-
-            <br />
-
-            <ul className="ratings-form-questions">
-            <li>
-            <span>How would you rate your overall satisfaction with the agency?</span>            
+            </Form.Field>
+            <Form.Field required>
+            <Segment>
+              <p>How would you rate your overall satisfaction with this agency?</p>
+              <Rating
+              className="ratings-form-stars-list"
+              maxRating={5}
+              icon="star"
+              //onRate={this.handleRatingSatisfaction}
+            />
+              </Segment>
+            </Form.Field>
+            
+            <Form.Field required>
+            <Segment>
+              <p>How would you rate their service and support?</p>
             <Rating
               className="ratings-form-stars-list"
               maxRating={5}
               icon="star"
-              //onRate={this.handleRate}
+              //onRate={this.handleRatingSupport}
             />
-        </li>
-        <li>
-            <span>How would you rate their service and support?</span>
+            </Segment>
+            </Form.Field>
+            <Form.Field required>
+            <Segment>
+              <p>How often do they pay on time?</p>
             <Rating
               className="ratings-form-stars-list"
               maxRating={5}
               icon="star"
-              //onRate={this.handleRate}
+              //onRate={this.handleRatingPayOnTime}
             />
-        </li>
-            <li>
-            <span>How often do they pay on time?</span>
+            </Segment>
+            </Form.Field>
+            <Form.Field required>
+            <Segment>
+              <p>How often do they pay in line with NUBSLI guidance?</p>
             <Rating
               className="ratings-form-stars-list"
               maxRating={5}
               icon="star"
-              //onRate={this.handleRate}
+              //onRate={this.handleRatingNUBSLI}
             />
-        </li>
-          <li>
-            <span>How often do they pay in line with NUBSLI guidance?</span>
+            </Segment>
+            </Form.Field>
+            <Form.Field required>
+            <Segment>
+              <p>How likely are you to work for them again?</p>
             <Rating
               className="ratings-form-stars-list"
               maxRating={5}
               icon="star"
-              //onRate={this.handleRate}
+              //onRate={this.handleRatingWorkAgain}
             />
-        </li>
-            <li>
-            <span>How likely are you to work for them again?</span>
+            </Segment>
+            </Form.Field>
+            <Form.Field required>
+            <Segment>
+              <p>How likely are you to recommend them to another interpreter/client?</p>
             <Rating
               className="ratings-form-stars-list"
               maxRating={5}
               icon="star"
-              //onRate={this.handleRate}
+              //onRate={this.handleRatingRecommend}
             />
-          </li>
-            <li>
-            <span>How likely are you to recommend them to another interpreter/client?</span>
-            <Rating
-              className="ratings-form-stars-list"
-              maxRating={5}
-              icon="star"
-              //onRate={this.handleRate}
-            />
-        </li>
-      </ul>
-        <br />
+            </Segment>
+            </Form.Field>
             <Button
+              className="ratings-form-submit-button"
               color="green">
               Submit
             </Button>
+            <br/>
        </Form>
-          </div>
-          </div>
+       </div>
+    
     );
 }
 }

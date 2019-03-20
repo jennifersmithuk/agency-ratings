@@ -23,7 +23,7 @@ class MainHeader extends Component {
     <Segment
       inverted
       textAlign='center'
-      style={{ minHeight: 220, padding: '1em 0em' }}
+      style={{ minHeight: 410, padding: '1em 0em' }}
       vertical
       >
 

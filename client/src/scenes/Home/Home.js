@@ -4,7 +4,7 @@ import ErrorBoundary from './../Home/components/ErrorBoundary';
 import RatingsResults from './../Home/components/RatingsResults';
 import RatingsForm from './components/RatingsForm/RatingsForm';
 import escapeRegExp from 'escape-string-regexp';
-import { Container, Icon, Grid, Responsive, Segment } from 'semantic-ui-react';
+import { Container, Segment } from 'semantic-ui-react';
 import Footer from './components/Footer';
 import MobileMenu from './components/Header/MobileMenu';
 import HomepageHeading from './components/Header/HomepageHeading'
@@ -146,21 +146,25 @@ class Home extends Component {
         <MobileMenu />
           
           <Intro />
-
           <Container 
             text
             className="Ratings">
+            <Segment>
             <RatingsResults
               agencies={this.state.agencies}
               filterResults={this.state.filterResults}
               updateFilterResults={this.updateFilterResults.bind(this)}/>
+            </Segment>
             </Container>
-
+            <br />
             <Container 
             text >
+             <Segment>
             <RatingsForm
               agencies={this.state.agencies}/>
+              </Segment>
           </Container>
+        <br />
 
         <Footer />
 

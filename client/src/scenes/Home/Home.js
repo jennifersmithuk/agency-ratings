@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
-import logo from './../../images/Stars_small.jpg';
-import './styles.scss';
+import './styles.css';
 import ErrorBoundary from './../Home/components/ErrorBoundary';
 import RatingsResults from './../Home/components/RatingsResults';
-import RatingsForm from './../Home/components/RatingsForm';
+import RatingsForm from './components/RatingsForm/RatingsForm';
 //import agencies from './../../agencies.json';
 import escapeRegExp from 'escape-string-regexp';
-import SignInButton from './../Home/components/SignInButton';
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import theme from './../Home/components/theme';
+import { Container, Header, Icon, Grid } from 'semantic-ui-react';
+import MainHeader from './components/Header/MainHeader';
+import Footer from './components/Footer';
+
 //import axios from "axios";
 //import { Route } from 'react-router-dom'
 //import AddAgency from './scenes/Home/components/AddAgency'
-
-/*
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-library.add(faStar)
-*/
 
 
 class Home extends Component {
@@ -48,6 +41,8 @@ class Home extends Component {
            }
        };
 
+       
+
   // when component mounts, first thing it does is fetch all existing data in our db
   // then we incorporate a polling logic so that we can easily see if our db has 
   // changed and implement those changes into our UI
@@ -72,7 +67,6 @@ class Home extends Component {
     }
 }
 
-
   //When query starts, filter results
   updateFilterResults(query) {
       const match = new RegExp(escapeRegExp(query), 'i')
@@ -81,17 +75,6 @@ class Home extends Component {
       })
     }
       
-
-/*Add Agency
-      createAgency(agency) {
-        AgenciesAPI.create(agency).then(agency => {
-          this.setState(state => ({
-            agencies: state.agencies.concat([ agencies ])
-          }))
-        })
-      }
-      */
-
 
 // just a note, here, in the front end, we use the id key of our data object 
   // in order to identify which we want to Update or delete.
@@ -149,55 +132,58 @@ class Home extends Component {
 
 
   render() {
+
+    const { fixed } = this.state
+
     return (
 
       <ErrorBoundary>
-        <MuiThemeProvider theme={theme}>
 
-      <div className="App flex-container">
-        <header className="App-header flex-container">
-          <img src={logo} className="App-logo" alt="Logo of 6 Green Stars with different ratings" />
-          <h1 className="App-title">Welcome to Agency Ratings</h1>
-          <h2>where interpreters rate agencies they like, and the ones they don't</h2>
-          <SignInButton
-            tabIndex={0}
-            ></SignInButton>
-        </header>
-      <main>
+        <MainHeader />
 
-        <div className="App-about">
-          <h3 className="App-about-heading">About Agency Ratings</h3>
-          <div className="App-about-info">
-          <p>Most interpreters are freelance, working for a variety of agencies and direct clients.</p>
-          <br />
-          <p>There are a multitude of agencies. Relying on word of mouth isn't enough.</p>
-          <br />
-          <p>Transparency and clarity for all. Finally, a way to rate agencies in a safe way.</p>
-        </div>
-        </div>
+        <Container 
+          text
+          className="App-about" >
+          <Grid relaxed columns={3} className="App-about-info">
+            <Grid.Column>
+            <Icon name='sign language' color='olive' size='big' className="App-about-icons" />
+              <p className="App-about-column-text">Most interpreters are freelance, working for a variety of agencies and direct clients.</p>
+            </Grid.Column>
+            <Grid.Column>
+            <Icon name='talk' size='big' color='green' className="App-about-icons" />
+              <p className="App-about-column-text">There are a multitude of agencies. Not all are reputable and relying on word of mouth isn't enough.</p>
+            </Grid.Column>
+            <Grid.Column>
+            <Icon name='star' size='big' color='teal' className="App-about-icons" />
+            <p className="App-about-column-text">Transparency and clarity for freelancers is vital... <br/> Finally, we can rate agencies in a safe way.</p>
+            </Grid.Column>
+          </Grid>
+        </Container>
 
-        <section className="Ratings flex-container">
+        <Container 
+          text
+          className="Ratings" >
+
 
           <RatingsResults
             agencies={this.state.agencies}
             filterResults={this.state.filterResults}
             updateFilterResults={this.updateFilterResults.bind(this)}
             />
+          </Container>
 
+
+          <Container 
+          text >
           <RatingsForm
             agencies={this.state.agencies}
 
             />
+        </Container>
 
-      </section>
-      </main>
 
-      <footer id="footer">
-          <span className="Footer-text">Built by <a href="https://www.linkedin.com/in/jennifersmithuk">Jennifer Smith</a>
-          &nbsp;&nbsp;&nbsp;&nbsp;Vector Art by <a rel="noopener noreferrer nofollow" target="_blank" href="https://www.vecteezy.com">Vecteezy.com</a></span>
-      </footer>
-    </div>
-    </MuiThemeProvider>
+      <Footer />
+
     </ErrorBoundary>
 
       );

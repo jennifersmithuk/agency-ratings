@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-import serializeForm from 'form-serialize'
-import AddButton from './AddButton'
+//import { Link } from 'react-router-dom';
+import serializeForm from 'form-serialize';
+import { Button, Icon } from 'semantic-ui-react';
 
 
 class AddAgency extends Component {
@@ -18,13 +18,17 @@ class AddAgency extends Component {
     return (
 
       <div>
-        <Link className='close-add-agency' to='/'>Close</Link>
         <form onSubmit={this.handleSubmit} className='add-agency-form'>
           <div className='add-agency-details'>
             <input type='text' name='Agency name' placeholder='Name'/>
             <input type='text' name='Town' placeholder='Town'/>
             <input type='text' name='Region' placeholder='Region'/>
-            <AddButton>Add Agency</AddButton>
+            <Button
+              tabIndex={0}
+              as='a' >
+              aria-label="Add Agency">
+              <Icon name='add' size='small' />
+            </Button>
           </div>
         </form>
       </div>

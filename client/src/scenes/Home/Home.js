@@ -3,15 +3,18 @@ import './styles.css';
 import ErrorBoundary from './../Home/components/ErrorBoundary';
 import RatingsResults from './../Home/components/RatingsResults';
 import RatingsForm from './components/RatingsForm/RatingsForm';
-//import agencies from './../../agencies.json';
 import escapeRegExp from 'escape-string-regexp';
-import { Container, Header, Icon, Grid } from 'semantic-ui-react';
-import MainHeader from './components/Header/MainHeader';
+import { Container, Icon, Grid, Responsive, Segment } from 'semantic-ui-react';
 import Footer from './components/Footer';
+import MobileMenu from './components/Header/MobileMenu';
+import HomepageHeading from './components/Header/HomepageHeading'
+import MainHeader from './components/Header/MainHeader';
+import Intro from './../Home/components/Intro';
 
 //import axios from "axios";
 //import { Route } from 'react-router-dom'
 //import AddAgency from './scenes/Home/components/AddAgency'
+  
 
 
 class Home extends Component {
@@ -96,8 +99,8 @@ class Home extends Component {
       console.log("got data!");
   };
 
-  /*
 
+  /*
   // our put method that uses our backend api
   // to create new query into our data base
   putDataToDB = message => {
@@ -138,53 +141,30 @@ class Home extends Component {
     return (
 
       <ErrorBoundary>
-
+     
         <MainHeader />
-
-        <Container 
-          text
-          className="App-about" >
-          <Grid relaxed columns={3} className="App-about-info">
-            <Grid.Column>
-            <Icon name='sign language' color='olive' size='big' className="App-about-icons" />
-              <p className="App-about-column-text">Most interpreters are freelance, working for a variety of agencies and direct clients.</p>
-            </Grid.Column>
-            <Grid.Column>
-            <Icon name='talk' size='big' color='green' className="App-about-icons" />
-              <p className="App-about-column-text">There are a multitude of agencies. Not all are reputable and relying on word of mouth isn't enough.</p>
-            </Grid.Column>
-            <Grid.Column>
-            <Icon name='star' size='big' color='teal' className="App-about-icons" />
-            <p className="App-about-column-text">Transparency and clarity for freelancers is vital... <br/> Finally, we can rate agencies in a safe way.</p>
-            </Grid.Column>
-          </Grid>
-        </Container>
-
-        <Container 
-          text
-          className="Ratings" >
-
-
-          <RatingsResults
-            agencies={this.state.agencies}
-            filterResults={this.state.filterResults}
-            updateFilterResults={this.updateFilterResults.bind(this)}
-            />
-          </Container>
-
+        <MobileMenu />
+          
+          <Intro />
 
           <Container 
-          text >
-          <RatingsForm
-            agencies={this.state.agencies}
+            text
+            className="Ratings">
+            <RatingsResults
+              agencies={this.state.agencies}
+              filterResults={this.state.filterResults}
+              updateFilterResults={this.updateFilterResults.bind(this)}/>
+            </Container>
 
-            />
-        </Container>
+            <Container 
+            text >
+            <RatingsForm
+              agencies={this.state.agencies}/>
+          </Container>
 
+        <Footer />
 
-      <Footer />
-
-    </ErrorBoundary>
+      </ErrorBoundary>
 
       );
   }

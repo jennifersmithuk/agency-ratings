@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Container, Button, Segment, Menu } from 'semantic-ui-react';
+import { Container, Button, Segment, Menu, Responsive } from 'semantic-ui-react';
 import HomepageHeading from './HomepageHeading';
 import './styles.css';
 
 
-class Header extends Component {
+class MainHeader extends Component {
     state = {}
     
     hideFixedMenu = () => this.setState({ fixed: false })
@@ -17,14 +16,17 @@ class Header extends Component {
       
       return (
 
-//const Header = ({ mobile }) => (
-
+  
+  <Responsive 
+   minWidth={768}
+  >
     <Segment
       inverted
       textAlign='center'
-      style={{ minHeight: 420, padding: '1em 0em' }}
+      style={{ minHeight: 410, padding: '1em 0em' }}
       vertical
       >
+
       <Menu
         fixed={fixed ? 'top' : null}
         inverted={!fixed}
@@ -53,16 +55,14 @@ class Header extends Component {
         </Menu.Item>
       </Container>
     </Menu>
-    <HomepageHeading/>
+    <HomepageHeading />
 </Segment>
-  )
+</Responsive>
+
+      
+
+      )
   }
 }
 
-export default Header;
-
-/*
-Header.propTypes = {
-  mobile: PropTypes.bool,
-}
-*/
+export default MainHeader;

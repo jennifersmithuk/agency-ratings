@@ -1,19 +1,10 @@
-import React, { Component } from 'react';
-//import PropTypes from 'prop-types';
+import React from 'react';
 import { Container, Button, Header, Icon, Image } from 'semantic-ui-react';
 import logo from './../../../../images/Stars_small.jpg';
 import './styles.css';
 
 
-class HomepageHeading extends Component {
-
-  state = {}
-  
-  
-  render() {
-    
-    return (
-
+const HomepageHeading = () => (
     
     <Container 
     text
@@ -22,14 +13,13 @@ class HomepageHeading extends Component {
       <Header
         as='h1'
         content='Welcome to Agency Ratings'
-        className="App-title"
         inverted
+      
       />
       <Header
         as='h2'
         content="where interpreters rate agencies they like... and the ones they don't"
         inverted
-        className="App-subtitle"
       />
       <Button 
         size="large"
@@ -40,13 +30,7 @@ class HomepageHeading extends Component {
       </Button>
     </Container>
   )
-      }
-    }
-  
+
   export default HomepageHeading;
 
-  /*
-  HomepageHeading.propTypes = {
-    mobile: PropTypes.bool,
-  }
-  */
+  

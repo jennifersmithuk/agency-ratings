@@ -1,37 +1,30 @@
 .ratings-form {
-  order: 2;
   /*margin: auto;*/
-  max-width: calc(70% - 50px);
-  width: 70%;
-  align-self: baseline;
   /*display: inline-block;*/
-  display: flex;
-  flex-flow: column wrap;
   }
 
 .ratings-form-main {
   padding: 0 0 10px 10px; 
+  margin-bottom: 30px;
   }
 
-.ratings-form-questions {
-  list-style-type: none;
-  font-size: 16px;
-  padding: 5px;
+.ui.search.selection.dropdown {
+  margin-bottom: 50px;
   }
 
-.ratings-form-questions li:hover {
-  text-decoration: none;
-  color: green;
-  }
-
-.ratings-form-form {
-  padding: 10px 0 10px 10px;
-  }
-
-.ratings-form-submit-button {
-  padding: 0 0 0 10px;
-  }
-
-.ratings-form-stars-list {
-  padding: 8px 0;
+.ui.selection.active.dropdown {
+  border-color: lightgreen !important;
 }
+.ui.selection.active.dropdown:hover {
+  border-color: lightgreen !important;
+}
+
+.ui.selection.active.dropdown .menu {
+  border-color: lightgreen !important;
+}
+
+button.ui.green.ratings-form-submit-button {
+  margin: 0 0 20px 0;
+}
+
+

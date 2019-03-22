@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Icon, Form, Dropdown, Rating, Container, Header, Segment } from 'semantic-ui-react';
-//import AddAgency from './../../AddAgency'
+import AddAgencyModal from './../../../Home/components/AddAgencyModal'
 //import { Route } from 'react-router-dom'
 import "./styles.css";
 
@@ -84,14 +84,10 @@ EXAMPLE from SO...
             />
             </Form.Field>
               <div className="ratings-form-add-button-message">
-              <strong>Agency missing from the list?<br/> 
-              Submit a request form.</strong>
+              <strong>Agency missing from the list? </strong>
+              <AddAgencyModal />
               </div>
-            <Button 
-            className="ratings-form-add-button"
-            color="green">
-            Add Agency
-            </Button>
+            
             <Form.Field required>
             <Segment>
               <p>How would you rate your overall satisfaction with this agency?</p>
@@ -161,7 +157,8 @@ EXAMPLE from SO...
             </Form.Field>
             <Button
               className="ratings-form-submit-button"
-              color="green">
+              //color="green"
+              >
               Submit
             </Button>
             <br/>

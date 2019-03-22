@@ -49,6 +49,10 @@ li:focus {
   margin: 0 5px 15px 10px;
 }
 
+.ui.input>input:focus {
+  border-color: lightgreen !important;
+}
+
 input:focus {
   outline: 0.5px solid green;
 }
@@ -80,7 +84,9 @@ input:focus {
   padding-top: 5px;
 }
 
-
+.button.ui.ratings-form-add-button {
+  margin: 0 0 40px 0;
+} 
 
 /* TODO not used yet...
 .Error-alert {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Menu, Icon, Input, Form, Dropdown, Rating, Container, Header, Segment } from 'semantic-ui-react';
-
-//import AddAgency from '../AddAgency'
+import { Button, Icon, Form, Dropdown, Rating, Container, Header, Segment } from 'semantic-ui-react';
+import AddAgencyModal from './../../../Home/components/AddAgencyModal'
 //import { Route } from 'react-router-dom'
 import "./styles.css";
 
@@ -46,20 +45,6 @@ EXAMPLE from SO...
   }
   */
 
-//TODO check function updates values - CHANGE to submit form NOT change DB
-/*
-  handleSubmit = e => {
-  e.preventDefault()
-
-  if (this.state.agencies) {
-    this.setState(({ agencies }) => ({
-      agencies: [
-        ...agencies ],
-    }))
-  }
-}
-*/
-
 //handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
 
@@ -74,9 +59,10 @@ EXAMPLE from SO...
       <Container>
         <Header as='h3' color='green'content="Rate an Agency" />
           <div className="ratings-form-main">
-          <p>There are 6 quick questions to rate the agency on, out of 5. The average is worked out and displayed in the results.</p>
-          <p>You must be logged in to give your ratings so we can verify that you're an interpreter and not a robot.</p>
-          <p>We have a strict privacy policy and your data is secure.</p>
+          <p>There are 6 quick questions. Rate your selected agency, for each question, out of 5.</p> 
+          <p>The average ratings are worked out and displayed in the results.</p>
+          <p>You must be logged in to give your ratings so we can verify that you're an interpreter, not someone else. Or a robot.</p>
+          <p>We have a strict privacy policy (LINK) and your data is secure.</p>
           </div>
           </Container>
 
@@ -97,6 +83,11 @@ EXAMPLE from SO...
             }))}
             />
             </Form.Field>
+              <div className="ratings-form-add-button-message">
+              <strong>Agency missing from the list? </strong>
+              <AddAgencyModal />
+              </div>
+            
             <Form.Field required>
             <Segment>
               <p>How would you rate your overall satisfaction with this agency?</p>
@@ -166,7 +157,8 @@ EXAMPLE from SO...
             </Form.Field>
             <Button
               className="ratings-form-submit-button"
-              color="green">
+              //color="green"
+              >
               Submit
             </Button>
             <br/>

@@ -44,7 +44,7 @@ class RatingsResults extends Component {
     return (
 
       <section className="Ratings-results">
-        <Header as='h3' color='green'content="The best and the worst..." />
+        <Header as='h3' color='green' content="The best and the worst..." />
 
         <Input
           className="Search-box"

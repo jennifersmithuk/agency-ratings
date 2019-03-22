@@ -20,7 +20,7 @@ class Footer extends Component {
               <Header inverted as='h4' content='About' />
               <List link inverted>
                 <List.Item as='a'>Why we created this site</List.Item>
-                <List.Item as='a'>Created by...</List.Item>
+                <List.Item as='a'>Data and privacy policy</List.Item>
                 <List.Item as='a'>Other projects</List.Item>
                 {/*<List.Item as='a'>Partners</List.Item>*/}
               </List>

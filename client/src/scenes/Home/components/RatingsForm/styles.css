@@ -9,7 +9,7 @@
   }
 
 .ui.search.selection.dropdown {
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   }
 
 .ui.selection.active.dropdown {
@@ -23,8 +23,16 @@
   border-color: lightgreen !important;
 }
 
+.ui.search.dropdown .menu {
+  max-height: 12rem !important;
+}
+
 button.ui.green.ratings-form-submit-button {
   margin: 0 0 20px 0;
+}
+
+.ratings-form-add-button-message {
+  margin: 40px 0 10px 0;
 }
 
 

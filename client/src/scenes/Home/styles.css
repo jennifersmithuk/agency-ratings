@@ -84,9 +84,14 @@ input:focus {
   padding-top: 5px;
 }
 
-.button.ui.ratings-form-add-button {
-  margin: 0 0 40px 0;
+.button.ui.ratings-form-add-agency-button {
+  margin: 0 0 40px 10px;
 } 
+
+.add-agency-modal-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
 
 /* TODO not used yet...
 .Error-alert {

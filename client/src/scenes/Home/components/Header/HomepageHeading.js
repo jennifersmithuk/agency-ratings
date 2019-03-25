@@ -25,7 +25,7 @@ const HomepageHeading = () => (
         size="large"
         color="green"
         >
-        Get Started
+        Rate an agency
         <Icon name='right arrow' />
       </Button>
     </Container>

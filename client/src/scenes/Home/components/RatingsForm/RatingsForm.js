@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Icon, Form, Dropdown, Rating, Container, Header, Segment } from 'semantic-ui-react';
+import { Button, Form, Rating, Container, Header, Segment, Message } from 'semantic-ui-react';
 import AddAgencyModal from './../../../Home/components/AddAgencyModal'
 //import { Route } from 'react-router-dom'
 import "./styles.css";
@@ -68,8 +68,10 @@ EXAMPLE from SO...
 
 
           <Form>
-            <Form.Field required>
+            <Form.Field>
             <Form.Dropdown required
+              className="ratings-agency-dropdown"
+              label='Choose Agency'
               placeholder='Click or start typing to select agency'
               fluid
               search
@@ -155,9 +157,10 @@ EXAMPLE from SO...
             />
             </Segment>
             </Form.Field>
+            <Message success header='Form Completed' content="Thank you for submitting your rating. This has been added to the ratings database." />
             <Button
               className="ratings-form-submit-button"
-              //color="green"
+              //color="green" when ready to submit
               >
               Submit
             </Button>

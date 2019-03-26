@@ -18,9 +18,10 @@ const HomepageHeading = () => (
       />
       <Header
         as='h2'
-        content="where interpreters rate agencies they like... and the ones they don't"
         inverted
-      />
+      >
+      <div>where interpreters rate agencies they like... <br/>
+        and the ones they don't</div></Header>
       <Button 
         size="large"
         color="green"

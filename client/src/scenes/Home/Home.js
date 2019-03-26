@@ -7,7 +7,6 @@ import escapeRegExp from 'escape-string-regexp';
 import { Container, Segment } from 'semantic-ui-react';
 import Footer from './components/Footer';
 import MobileMenu from './components/Header/MobileMenu';
-import HomepageHeading from './components/Header/HomepageHeading'
 import MainHeader from './components/Header/MainHeader';
 import Intro from './../Home/components/Intro';
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Button, Segment, Menu, Responsive } from 'semantic-ui-react';
-import HomepageHeading from './HomepageHeading';
+import { NavLink, BrowserRouter as Router } from 'react-router-dom'
 import './styles.css';
+
 
 
 class MainHeader extends Component {
@@ -23,10 +24,9 @@ class MainHeader extends Component {
     <Segment
       inverted
       textAlign='center'
-      style={{ minHeight: 410, padding: '1em 0em' }}
       vertical
       >
-
+      <Router>
       <Menu
         fixed={fixed ? 'top' : null}
         inverted={!fixed}
@@ -35,12 +35,12 @@ class MainHeader extends Component {
         size='large'
       >
       <Container>
-        <Menu.Item as='a' active>
+        <Menu.Item as={NavLink} to="/" >
           Home
         </Menu.Item>
-        <Menu.Item as='a'>About</Menu.Item>
-        <Menu.Item as='a'>Rate an Agency</Menu.Item>
-        <Menu.Item as='a'>Ratings Results</Menu.Item>
+        <Menu.Item as={NavLink} to="/about" >About</Menu.Item>
+        <Menu.Item as={NavLink} to="/rate-an-agency" >Rate an Agency</Menu.Item>
+        <Menu.Item as={NavLink} to="/ratings-results" >Ratings Results</Menu.Item>
         <Menu.Item position='right'>
         
           <Button as='a' inverted={!fixed}>
@@ -55,7 +55,7 @@ class MainHeader extends Component {
         </Menu.Item>
       </Container>
     </Menu>
-    <HomepageHeading />
+    </Router>
 </Segment>
 </Responsive>
 

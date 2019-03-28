@@ -19,10 +19,10 @@ class Footer extends Component {
             <Grid.Column width={3}>
               <Header inverted as='h4' content='About' />
               <List link inverted>
-                <List.Item as='a'>Why we created this site</List.Item>
+                <List.Item as='a'>FAQs</List.Item>
+                <List.Item as='a'>Why I created this site</List.Item>
                 <List.Item as='a'>Data and privacy policy</List.Item>
                 <List.Item as='a'>Other projects</List.Item>
-                {/*<List.Item as='a'>Partners</List.Item>*/}
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
@@ -30,7 +30,7 @@ class Footer extends Component {
               <List link inverted>
                 <List.Item as='a'>Add an agency</List.Item>
                 <List.Item as='a'>Rate an agency</List.Item>
-                {/*<List.Item as='a'>See your past ratings</List.Item>*/}
+                <List.Item as='a'>See ratings results</List.Item>
                 <List.Item as='a'>Sign up for info</List.Item>
               </List>
             </Grid.Column>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import { Responsive, Sidebar, Menu, Segment, Container, Icon, Button } from 'semantic-ui-react';
-import HomepageHeading from './HomepageHeading';
+import { NavLink, BrowserRouter as Router } from 'react-router-dom'
 
 
 class MobileMenu extends Component {
@@ -20,6 +20,7 @@ class MobileMenu extends Component {
           as={Sidebar.Pushable}
           maxWidth={767}
         >
+        <Router>
           <Sidebar
             as={Menu}
             animation='push'
@@ -28,19 +29,20 @@ class MobileMenu extends Component {
             vertical
             visible={sidebarOpened}
           >
-            <Menu.Item as='a' active>
-              Home
-            </Menu.Item>
-            <Menu.Item as='a'>About</Menu.Item>
-            <Menu.Item as='a'>Rate an Agency</Menu.Item>
-            <Menu.Item as='a'>Ratings Results</Menu.Item>
+            <Menu.Item as={NavLink} to="/" >
+          Home
+          </Menu.Item>
+          <Menu.Item as={NavLink} to="/about" >About</Menu.Item>
+          <Menu.Item as={NavLink} to="/rate-an-agency" >Rate an Agency</Menu.Item>
+          <Menu.Item as={NavLink} to="/ratings-results" >Ratings Results</Menu.Item>
+          
           </Sidebar>
-  
+          </Router>
           <Sidebar.Pusher dimmed={sidebarOpened}>
             <Segment
               inverted
               textAlign='center'
-              style={{ minHeight: 140, padding: '1em 0em' }}
+              style={{ minHeight: 160, padding: '1em 0em' }}
               vertical
             >
               <Container>
@@ -58,7 +60,6 @@ class MobileMenu extends Component {
                   </Menu.Item>
                 </Menu>
               </Container>
-              <HomepageHeading />
             </Segment>
   
             {children}

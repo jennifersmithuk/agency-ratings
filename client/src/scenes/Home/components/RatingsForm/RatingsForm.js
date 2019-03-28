@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, Rating, Container, Header, Segment, Message } from 'semantic-ui-react';
-import AddAgencyModal from './../../../Home/components/AddAgencyModal'
+import AddAgencyModal from './AddAgencyModal'
 //import { Route } from 'react-router-dom'
 import "./styles.css";
 

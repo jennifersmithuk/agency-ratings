@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './styles.css';
 import ErrorBoundary from './../Home/components/ErrorBoundary';
-import RatingsResults from './../Home/components/RatingsResults';
 import RatingsForm from './components/RatingsForm/RatingsForm';
 import escapeRegExp from 'escape-string-regexp';
-import { Container, Segment } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import Footer from './components/Footer';
 import MobileMenu from './components/Header/MobileMenu';
-import HomepageHeading from './components/Header/HomepageHeading'
 import MainHeader from './components/Header/MainHeader';
-import Intro from './../Home/components/Intro';
+import Intro from './components/Intro/Intro';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import About from './components/About/About';
 
 //import axios from "axios";
 //import { Route } from 'react-router-dom'
@@ -141,33 +141,37 @@ class Home extends Component {
     return (
 
       <ErrorBoundary>
-     
+        <Router>
+          <div>
         <MainHeader />
         <MobileMenu />
           
-          <Intro />
-          <Container 
-            text
-            className="Ratings">
-            <Segment>
-            <RatingsResults
-              agencies={this.state.agencies}
-              filterResults={this.state.filterResults}
-              updateFilterResults={this.updateFilterResults.bind(this)}/>
-            </Segment>
-            </Container>
+          <Switch>
+            <Route exact path="/" render={() => (
+               <Intro agencies={this.state.agencies}/>
+            )}/>
+            <Route path="/about" render={() => (
+               <About />
+            )}/>
+            <Route exact path='/rate-an-agency' render={() => (
+               <RatingsForm
+               agencies={this.state.agencies}/>
+            )}/>
+            {/*<Route path="/ratings-results-full" component={RatingsResultsFull} /> */}
+            {/*<Route component={Notfound} /> */}
+          </Switch>
+        
             <br />
             <Container 
             text >
-             <Segment>
-            <RatingsForm
-              agencies={this.state.agencies}/>
-              </Segment>
+         
+
           </Container>
         <br />
-
         <Footer />
-
+        </div>
+        </Router>
+        
       </ErrorBoundary>
 
       );

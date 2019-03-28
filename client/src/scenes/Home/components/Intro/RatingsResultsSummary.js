@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import escapeRegExp from 'escape-string-regexp';
 import sortBy from 'sort-by';
 import { Header, Input, Rating } from 'semantic-ui-react';
+import './styles.css';
 
 
-class RatingsResults extends Component {
+class RatingsResultsSummary extends Component {
 
   constructor(props){
     super(props);
@@ -20,7 +21,6 @@ class RatingsResults extends Component {
         })
         this.props.updateFilterResults(query)
       }
-
 
 
   render() {
@@ -92,4 +92,4 @@ class RatingsResults extends Component {
 }
 }
 
-export default RatingsResults;
+export default RatingsResultsSummary;

@@ -8,7 +8,8 @@
   margin-bottom: 30px;
   }
 
-.ui.search.selection.dropdown {
+  /*TODO fix margins in dropdowns*/
+.ui.search.selection.dropdown.ratings-agency-dropdown {
   margin-bottom: 70px;
   }
 
@@ -32,7 +33,7 @@ button.ui.green.ratings-form-submit-button {
 }
 
 .ratings-form-add-button-message {
-  margin: 40px 0 10px 0;
+  margin: 75px 0 30px 0;
 }
 
 

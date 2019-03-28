@@ -7,7 +7,7 @@ import './styles.css';
 const HomepageHeading = () => (
     
     <Container 
-    text
+    className="home-page-header"
     >
     <Image src={logo} className="App-logo" centered alt="Logo of 6 Green Stars with different ratings" />
       <Header

@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import MobileMenu from './components/Header/MobileMenu';
 import MainHeader from './components/Header/MainHeader';
 import Intro from './../Home/components/Intro';
+import HomepageHeading from './components/Header/HomepageHeading';
 
 //import axios from "axios";
 //import { Route } from 'react-router-dom'
@@ -143,8 +144,10 @@ class Home extends Component {
      
         <MainHeader />
         <MobileMenu />
+        <HomepageHeading />
           
           <Intro />
+          
           <Container 
             text
             className="Ratings">

@@ -40,7 +40,7 @@ class MobileMenu extends Component {
             <Segment
               inverted
               textAlign='center'
-              style={{ minHeight: 140, padding: '1em 0em' }}
+              style={{ minHeight: 160, padding: '1em 0em' }}
               vertical
             >
               <Container>
@@ -58,7 +58,7 @@ class MobileMenu extends Component {
                   </Menu.Item>
                 </Menu>
               </Container>
-              <HomepageHeading />
+              {/*<HomepageHeading />*/}
             </Segment>
   
             {children}

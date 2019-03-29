@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './styles.css';
 import { Responsive, Sidebar, Menu, Segment, Container, Icon, Button } from 'semantic-ui-react';
-import { NavLink, BrowserRouter as Router } from 'react-router-dom'
+import { NavLink, Route } from 'react-router-dom';
+import Intro from './../../components/Intro/Intro';
+import About from './../../components/About/About';
+import RatingsForm from './../../components/RatingsForm/RatingsForm';
 
 
 class MobileMenu extends Component {
@@ -20,7 +23,7 @@ class MobileMenu extends Component {
           as={Sidebar.Pushable}
           maxWidth={767}
         >
-        <Router>
+  
           <Sidebar
             as={Menu}
             animation='push'
@@ -29,15 +32,12 @@ class MobileMenu extends Component {
             vertical
             visible={sidebarOpened}
           >
-            <Menu.Item as={NavLink} to="/" >
-          Home
-          </Menu.Item>
+          <Menu.Item as={NavLink} to="/" active >Home</Menu.Item>
           <Menu.Item as={NavLink} to="/about" >About</Menu.Item>
           <Menu.Item as={NavLink} to="/rate-an-agency" >Rate an Agency</Menu.Item>
           <Menu.Item as={NavLink} to="/ratings-results" >Ratings Results</Menu.Item>
           
           </Sidebar>
-          </Router>
           <Sidebar.Pusher dimmed={sidebarOpened}>
             <Segment
               inverted
@@ -59,11 +59,24 @@ class MobileMenu extends Component {
                     </Button>
                   </Menu.Item>
                 </Menu>
+                
               </Container>
             </Segment>
   
             {children}
           </Sidebar.Pusher>
+          <Route exact path="/" render={() => (
+               <Intro agencies={this.props.agencies}/>
+            )}/>
+            <Route path="/about" render={() => (
+               <About />
+            )}/>
+            <Route exact path='/rate-an-agency' render={() => (
+               <RatingsForm
+               agencies={this.props.agencies}/>
+            )}/>
+            {/*<Route path="/ratings-results-full" component={RatingsResultsFull} /> */}
+            {/*<Route component={Notfound} /> */}
         </Responsive>
       )
     }

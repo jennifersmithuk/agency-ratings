@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Button, Segment, Menu, Responsive } from 'semantic-ui-react';
-import { NavLink, BrowserRouter as Router } from 'react-router-dom'
+import { Route, NavLink } from 'react-router-dom'
 import './styles.css';
+import Intro from './../../components/Intro/Intro';
+import About from './../../components/About/About';
+import RatingsForm from './../../components/RatingsForm/RatingsForm';
 
 
 
@@ -12,7 +15,6 @@ class MainHeader extends Component {
     showFixedMenu = () => this.setState({ fixed: true })
     
     render() {
-        const { children } = this.props
         const { fixed } = this.state
       
       return (
@@ -26,7 +28,6 @@ class MainHeader extends Component {
       textAlign='center'
       vertical
       >
-      <Router>
       <Menu
         fixed={fixed ? 'top' : null}
         inverted={!fixed}
@@ -35,9 +36,7 @@ class MainHeader extends Component {
         size='large'
       >
       <Container>
-        <Menu.Item as={NavLink} to="/" >
-          Home
-        </Menu.Item>
+        <Menu.Item as={NavLink} to="/" active >Home</Menu.Item>
         <Menu.Item as={NavLink} to="/about" >About</Menu.Item>
         <Menu.Item as={NavLink} to="/rate-an-agency" >Rate an Agency</Menu.Item>
         <Menu.Item as={NavLink} to="/ratings-results" >Ratings Results</Menu.Item>
@@ -55,8 +54,21 @@ class MainHeader extends Component {
         </Menu.Item>
       </Container>
     </Menu>
-    </Router>
-</Segment>
+    </Segment>
+    <Route exact path="/" render={() => (
+               <Intro agencies={this.props.agencies}/>
+            )}/>
+            <Route path="/about" render={() => (
+               <About />
+            )}/>
+            <Route exact path='/rate-an-agency' render={() => (
+               <RatingsForm
+               agencies={this.props.agencies}/>
+            )}/>
+            {/*<Route path="/ratings-results-full" component={RatingsResultsFull} /> */}
+            {/*<Route component={Notfound} /> */}
+
+
 </Responsive>
 
       

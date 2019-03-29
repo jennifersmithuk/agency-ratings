@@ -1,0 +1,21 @@
+.about-main {
+    margin: 70px 0; 
+}
+
+h3>a {
+    color: #21ba45 !important;
+    text-align: left !important;
+}
+
+.ui.segment.about-why {
+    margin: 70px 0;
+    text-align: left;
+}
+
+div.ui.segment.about-other {
+    margin: 70px 0;
+}
+
+.ui.about-why-text {
+    text-align: center;
+}

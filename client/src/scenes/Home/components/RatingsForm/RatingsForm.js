@@ -55,17 +55,15 @@ EXAMPLE from SO...
 
     return (
  
-      <div className="ratings-form">
-      <Container>
-        <Header as='h3' color='green'content="Rate an Agency" />
-          <div className="ratings-form-main">
+     
+      <Container text className="ratings-form">
+        <Header as='h3' color='green' content="Rate an Agency" />
+          <Segment className="ratings-form-main">
           <p>There are 6 quick questions. Rate your selected agency, for each question, out of 5.</p> 
           <p>The average ratings are worked out and displayed in the results.</p>
           <p>You must be logged in to give your ratings so we can verify that you're an interpreter, not someone else. Or a robot.</p>
           <p>We have a strict privacy policy (LINK) and your data is secure.</p>
-          </div>
-          </Container>
-
+          </Segment>
 
           <Form>
             <Form.Field>
@@ -166,7 +164,7 @@ EXAMPLE from SO...
             </Button>
             <br/>
        </Form>
-       </div>
+       </Container>
     
     );
 }

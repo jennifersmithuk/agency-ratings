@@ -21,8 +21,8 @@ class AboutFAQs extends Component {
     
         return (
 
-            <Container text>
-            <Header as='h3' color='green' >
+            <Container text className="about-main">
+            <Header as='h3' color='green'>
             <a href='#'>FAQs</a>
             </Header>
             <Accordion fluid styled>

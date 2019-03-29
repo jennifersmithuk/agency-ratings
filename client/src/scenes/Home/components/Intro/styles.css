@@ -1,0 +1,95 @@
+.home-page-header {
+    background-color: #1b1c1d;
+    min-height: 320px;
+    width: 100% !important;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .App-logo {
+    border-radius: 10px;
+    height: 110px;
+    justify-items: center;
+    
+  }
+
+  .App-about {
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  .App-about-info {
+    margin: 20px 0 !important;
+  }
+  
+  .App-about-column-text {
+    margin-top: 20px;
+  }
+  
+    
+/*Ratings Results section */
+.Ratings {
+    margin: 20px 0;
+    height: 300px; /*TODO code out top 5/worse 5 section and decide height */
+  }
+  
+  .Ratings-results {
+    text-align: left;
+    /*margin: auto;*/
+    margin: 0 10px 0 0;
+  }
+  
+  li:focus {
+    text-decoration: none;
+    outline: 0.5px solid green;
+    }
+  
+  .Search-box {
+    padding-top: 7px;
+    margin: 0 5px 15px 10px;
+  }
+  
+  .ui.input>input:focus {
+    border-color: lightgreen !important;
+  }
+  
+  input:focus {
+    outline: 0.5px solid green;
+  }
+  
+  .Ratings-agencies-list {
+    list-style-type: none;
+    padding-bottom: 20px;
+    margin-left: 10px;
+    font-size: 0.85em;
+    height: 200px;
+    overflow-y: auto;
+  }
+  
+  .Ratings-agencies-list li:hover {
+    color: green;
+  }
+  
+  .Ratings-list-names {
+    padding-bottom: 1px;
+  }
+
+  /*Media queries */
+
+  @media only screen and (max-width: 1199px) and (min-width: 992px) {
+  .ui.container {
+      margin-left: auto!important;
+      margin-right: auto!important;
+  }
+}
+
+  @media only screen and (max-width: 767px) {
+    .App-logo {
+        display: none !important;
+    }
+        .ui.container.home-page-header {
+            margin-left: 0em!important;
+            margin-right: 0em!important;
+        }
+        }
+  

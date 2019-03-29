@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import './styles.css';
 import ErrorBoundary from './../Home/components/ErrorBoundary';
-import RatingsForm from './components/RatingsForm/RatingsForm';
 import escapeRegExp from 'escape-string-regexp';
 import { Container } from 'semantic-ui-react';
 import Footer from './components/Footer';
 import MobileMenu from './components/Header/MobileMenu';
 import MainHeader from './components/Header/MainHeader';
-import Intro from './components/Intro/Intro';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import About from './components/About/About';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 
 //import axios from "axios";
 //import { Route } from 'react-router-dom'
@@ -136,38 +134,16 @@ class Home extends Component {
 
   render() {
 
-    const { fixed } = this.state
 
     return (
 
       <ErrorBoundary>
         <Router>
           <div>
-        <MainHeader />
-        <MobileMenu />
-          
-          <Switch>
-            <Route exact path="/" render={() => (
-               <Intro agencies={this.state.agencies}/>
-            )}/>
-            <Route path="/about" render={() => (
-               <About />
-            )}/>
-            <Route exact path='/rate-an-agency' render={() => (
-               <RatingsForm
-               agencies={this.state.agencies}/>
-            )}/>
-            {/*<Route path="/ratings-results-full" component={RatingsResultsFull} /> */}
-            {/*<Route component={Notfound} /> */}
-          </Switch>
-        
-            <br />
-            <Container 
-            text >
-         
+        <MainHeader agencies={this.state.agencies} />
+        <MobileMenu agencies={this.state.agencies} />
 
-          </Container>
-        <br />
+          
         <Footer />
         </div>
         </Router>

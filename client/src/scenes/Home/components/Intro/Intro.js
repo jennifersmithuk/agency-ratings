@@ -13,11 +13,11 @@ class Intro extends Component {
 
       return (
 
+        <div>
+        <HomepageHeading />
     <Container 
     text
     className="App-about" >
-
-    <HomepageHeading />
 
     <Grid relaxed columns={3} className="App-about-info">
       <Grid.Column>
@@ -45,8 +45,8 @@ class Intro extends Component {
             </Segment>
             
             </Container>
-
          </Container>
+         </div>
       )
     }
 }

@@ -9,7 +9,7 @@ class Intro extends Component {
     
     render() {
     
-      const { agencies } = this.props.agencies;
+      const { agencies } = this.props.agencies; //needed?
 
       return (
 
@@ -41,6 +41,7 @@ class Intro extends Component {
             <Segment>
             <RatingsResultsSummary
               agencies={this.props.agencies}
+              filterResults={this.props.filterResults}
                 /> 
             </Segment>
             

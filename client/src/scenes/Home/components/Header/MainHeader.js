@@ -56,7 +56,9 @@ class MainHeader extends Component {
     </Menu>
     </Segment>
     <Route exact path="/" render={() => (
-               <Intro agencies={this.props.agencies}/>
+               <Intro 
+               agencies={this.props.agencies}
+               filterResults={this.props.filterResults}/>
             )}/>
             <Route path="/about" render={() => (
                <About />

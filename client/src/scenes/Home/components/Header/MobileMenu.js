@@ -66,7 +66,9 @@ class MobileMenu extends Component {
             {children}
           </Sidebar.Pusher>
           <Route exact path="/" render={() => (
-               <Intro agencies={this.props.agencies}/>
+               <Intro 
+               agencies={this.props.agencies}
+               filterResults={this.props.filterResults}/>
             )}/>
             <Route path="/about" render={() => (
                <About />

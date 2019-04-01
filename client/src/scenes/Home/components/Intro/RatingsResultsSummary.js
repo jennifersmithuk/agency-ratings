@@ -11,7 +11,7 @@ class RatingsResultsSummary extends Component {
     super(props);
 
     this.state = {
-        query: '',
+        query: ''
 }
 }
 
@@ -19,8 +19,18 @@ class RatingsResultsSummary extends Component {
     this.setState({
       query: query,
         })
-        this.props.updateFilterResults(query)
+        this.updateFilterResults(query)
       }
+  
+  
+  //When query starts, filter results
+  updateFilterResults(query) {
+    const match = new RegExp(escapeRegExp(query), 'i')
+    this.setState({
+      filterResults: this.props.agencies.filter((agencies) => match.test(agencies.AgencyName))
+    })
+  }
+  
 
 
   render() {
@@ -61,10 +71,10 @@ class RatingsResultsSummary extends Component {
             agencies={this.props.agencies}
             >
 
-                {this.props.filterResults === undefined ?
-                  <p className="Error-alert">Could not load agencies...</p> :
+                {this.state.filterResults === undefined ?
+                  <p className="Error-alert">Loading agencies...</p> :
 
-                (this.props.filterResults.map(agencies => (
+                (this.state.filterResults.map(agencies => (
                 <li
                   className="Ratings-list-names"
                   key={agencies.id}

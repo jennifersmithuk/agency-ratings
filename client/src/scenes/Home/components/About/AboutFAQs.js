@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
-import { Container, Accordion, Icon, Segment, Header } from 'semantic-ui-react';
+import { Container, Accordion, Icon, Header } from 'semantic-ui-react';
 
 
 class AboutFAQs extends Component {

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
 import ErrorBoundary from './../Home/components/ErrorBoundary';
-import escapeRegExp from 'escape-string-regexp';
-import { Container } from 'semantic-ui-react';
 import Footer from './components/Footer';
 import MobileMenu from './components/Header/MobileMenu';
 import MainHeader from './components/Header/MainHeader';
@@ -22,6 +20,7 @@ class Home extends Component {
 
        this.state = {
         agencies: [],
+        filterResults: [],
         id: 0,
         intervalIsSet: false,
         idToUpdate: null,
@@ -37,8 +36,6 @@ class Home extends Component {
         RatingNUBSLI: null,
         RatingWorkAgain: null,
         RatingRecommend: null,
-        filterResults: [],
-        filterQuery: '',
            }
        };
 
@@ -67,14 +64,6 @@ class Home extends Component {
       });
     }
 }
-
-  //When query starts, filter results
-  updateFilterResults(query) {
-      const match = new RegExp(escapeRegExp(query), 'i')
-      this.setState({
-        filterResults: this.state.agencies.filter((agencies) => match.test(agencies.AgencyName))
-      })
-    }
       
 
 // just a note, here, in the front end, we use the id key of our data object 
@@ -140,9 +129,12 @@ class Home extends Component {
       <ErrorBoundary>
         <Router>
           <div>
-        <MainHeader agencies={this.state.agencies} />
-        <MobileMenu agencies={this.state.agencies} />
-
+        <MainHeader 
+        agencies={this.state.agencies}
+        filterResults={this.state.filterResults} /> {/*update to props?*/}
+        <MobileMenu 
+        agencies={this.state.agencies}
+        filterResults={this.state.filterResults} /> {/*update to props?*/}
           
         <Footer />
         </div>

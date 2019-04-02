@@ -78,6 +78,7 @@ class MobileMenu extends Component {
                agencies={this.props.agencies}/>
             )}/>
             {/*<Route path="/ratings-results-full" component={RatingsResultsFull} /> */}
+            {/*<Route path="/data-privacy" component={DataPrivacy} /> */}
             {/*<Route component={Notfound} /> */}
         </Responsive>
       )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import { Container, Accordion, Icon, Header } from 'semantic-ui-react';
+import { HashLink as Link } from 'react-router-hash-link';
 
 
 class AboutFAQs extends Component {
@@ -23,7 +24,13 @@ class AboutFAQs extends Component {
 
             <Container text className="about-main">
             <Header as='h3' color='green'>
-            <a href='#'>FAQs</a>
+            {/*<Link
+                smooth
+                to="/about#faqs"
+                >FAQs</Link>*/}
+            <div id="faqs">
+            <p>FAQs</p>
+            </div>
             </Header>
             <Accordion fluid styled>
             <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>

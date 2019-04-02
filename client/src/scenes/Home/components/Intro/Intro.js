@@ -9,7 +9,7 @@ class Intro extends Component {
     
     render() {
     
-      const { agencies } = this.props.agencies; //needed?
+ 
 
       return (
 

@@ -131,10 +131,10 @@ class Home extends Component {
           <div>
         <MainHeader 
         agencies={this.state.agencies}
-        filterResults={this.state.filterResults} /> {/*update to props?*/}
+        filterResults={this.state.filterResults} /> 
         <MobileMenu 
         agencies={this.state.agencies}
-        filterResults={this.state.filterResults} /> {/*update to props?*/}
+        filterResults={this.state.filterResults} /> 
           
         <Footer />
         </div>

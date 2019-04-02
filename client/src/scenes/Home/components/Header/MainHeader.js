@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Button, Segment, Menu, Responsive } from 'semantic-ui-react';
-import { Route, NavLink } from 'react-router-dom'
+import { Route, NavLink } from 'react-router-dom';
 import './styles.css';
 import Intro from './../../components/Intro/Intro';
 import About from './../../components/About/About';
@@ -67,8 +67,9 @@ class MainHeader extends Component {
                <RatingsForm
                agencies={this.props.agencies}/>
             )}/>
-            {/*<Route path="/ratings-results-full" component={RatingsResultsFull} /> */}
-            {/*<Route component={Notfound} /> */}
+            {/*<Route path="/ratings-results" component={RatingsResultsFull} /> */}
+            {/*<Route path="/data-privacy" component={DataPrivacy} /> */}
+            {/*<Route component={NotFound} /> */}
 
 
 </Responsive>

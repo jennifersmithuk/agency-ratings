@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import './styles.css';
 import { Container, Icon, Segment, Header } from 'semantic-ui-react';
 import AboutFAQs from './AboutFAQs';
+import { HashLink as Link } from 'react-router-hash-link';
 
 
 class About extends Component {
 
     render() {
 
-   
     
         return (
 
@@ -16,7 +16,14 @@ class About extends Component {
             <AboutFAQs />
             <Container className="about-why">
             <Header as='h3' color='green' >
-            <a href='#'>Why I created this site</a>
+
+            {/*<Link
+                smooth
+                to="about#why"
+            >Why I created this site</Link>*/}
+            <div id="why">
+            <p>Why I created this site</p>
+            </div>
             </Header>
             <Container text className='about-why-text'>
             <Icon name='computer' color='olive' size='large' className='about-icons'/>
@@ -48,14 +55,23 @@ class About extends Component {
             </Container>
             <Segment className="about-other">
             <Container text>
+            
             <Header as='h3' color='green' >
-            <a href='#'>Other Projects</a>
+
+            {/*<Link
+                smooth
+                to="/about#other-projects"
+            >Other Projects</Link>*/}
+            <div id="other-projects">
+            <p>Other Projects</p>
+            </div>
             </Header>
-            <p>I'm working on an exciting new project with two brilliant colleagues. <br/>
+           
+            <p>I'm working on an exciting new project with some brilliant colleagues. <br/>
                 We are aiming to change the way the market operates.
                 The current system is open to abuse and broken. <br/>
                 </p>
-            <p>CoSign.io can change all this. <br/>
+            <p>SignCo.io can change all this. <br/>
                 Interpreters and other interested parties can register their interest and sign up for updates.
             </p>
             <p>My previous projects and web development work can be seen on my personal portfolio at <a href='https://jensmith.info/' title='Jen Smith Portfolio'>jensmith.info</a>

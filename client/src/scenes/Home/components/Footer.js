@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Container, Segment, Grid, Header, List, Icon } from 'semantic-ui-react';
+//import { NavLink } from 'react-router-dom';
+import { NavHashLink as NavLink } from "react-router-hash-link";
 
 
 class Footer extends Component {
@@ -19,19 +21,19 @@ class Footer extends Component {
             <Grid.Column width={3}>
               <Header inverted as='h4' content='About' />
               <List link inverted>
-                <List.Item as='a'>FAQs</List.Item>
-                <List.Item as='a'>Why I created this site</List.Item>
-                <List.Item as='a'>Data and privacy policy</List.Item>
-                <List.Item as='a'>Other projects</List.Item>
+                <List.Item as={NavLink} to="/about#faqs" activeClassName="selected" >FAQs</List.Item>
+                <List.Item as={NavLink} to="/about#why" activeClassName="selected" >Why I created this site</List.Item>
+                <List.Item as={NavLink} to="/about#other-projects" activeClassName="selected" location={{pathname: document.location.pathname + document.location.hash}}>Other projects</List.Item>
+                {/*<List.Item as={NavLink} to="/data-privacy" >Data and privacy policy</List.Item>*/}
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
               <Header inverted as='h4' content='Actions' />
               <List link inverted>
-                <List.Item as='a'>Add an agency</List.Item>
-                <List.Item as='a'>Rate an agency</List.Item>
-                <List.Item as='a'>See ratings results</List.Item>
-                <List.Item as='a'>Sign up for info</List.Item>
+                <List.Item as={NavLink} smooth to="/about#hash" >Add an agency</List.Item>
+                <List.Item as={NavLink} to="/rate-an-agency" >Rate an agency</List.Item>
+                <List.Item as={NavLink} to="/ratings-results" >See ratings results</List.Item>
+                {/*<List.Item as={NavLink} to="/" >Sign up for info</List.Item>*/}
               </List>
             </Grid.Column>
             <Grid.Column width={7}>

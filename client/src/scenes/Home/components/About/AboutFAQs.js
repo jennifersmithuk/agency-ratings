@@ -24,13 +24,11 @@ class AboutFAQs extends Component {
 
             <Container text className="about-main">
             <Header as='h3' color='green'>
-            {/*<Link
+            <Link
                 smooth
                 to="/about#faqs"
-                >FAQs</Link>*/}
-            <div id="faqs">
-            <p>FAQs</p>
-            </div>
+                id="faqs"
+                >FAQs</Link>
             </Header>
             <Accordion fluid styled>
             <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>

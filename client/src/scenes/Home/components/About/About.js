@@ -17,13 +17,11 @@ class About extends Component {
             <Container className="about-why">
             <Header as='h3' color='green' >
 
-            {/*<Link
+            <Link
                 smooth
+                id="why"
                 to="about#why"
-            >Why I created this site</Link>*/}
-            <div id="why">
-            <p>Why I created this site</p>
-            </div>
+            >Why I created this site</Link>
             </Header>
             <Container text className='about-why-text'>
             <Icon name='computer' color='olive' size='large' className='about-icons'/>
@@ -58,13 +56,11 @@ class About extends Component {
             
             <Header as='h3' color='green' >
 
-            {/*<Link
+            <Link
                 smooth
                 to="/about#other-projects"
-            >Other Projects</Link>*/}
-            <div id="other-projects">
-            <p>Other Projects</p>
-            </div>
+                id="other-projects"
+            >Other Projects</Link>
             </Header>
            
             <p>I'm working on an exciting new project with some brilliant colleagues. <br/>
